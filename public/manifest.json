@@ -1,0 +1,58 @@
+{
+  "name": "FormReady - Image and PDF Tools",
+  "short_name": "FormReady",
+  "description": "Free browser-based tools to compress and resize images, convert images to PDF, merge PDFs and compress PDF files.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#1f5fbf",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Compress an image",
+      "url": "/image-compressor",
+      "description": "Reduce an image to a target file size"
+    },
+    {
+      "name": "Image to PDF",
+      "url": "/image-to-pdf",
+      "description": "Combine images into a single PDF"
+    },
+    {
+      "name": "Merge PDFs",
+      "url": "/merge-pdf",
+      "description": "Join several PDF files into one"
+    }
+  ]
+}

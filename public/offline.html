@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Offline - FormReady</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#1f5fbf" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <style>
+      :root { color-scheme: light; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 1.5rem;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background: #f6f8fb;
+        color: #2b3746;
+      }
+      .card {
+        width: 100%;
+        max-width: 34rem;
+        background: #fff;
+        border: 1px solid #dfe5ec;
+        border-radius: 18px;
+        padding: 2rem;
+        box-shadow: 0 18px 48px rgba(16, 24, 40, 0.08);
+      }
+      .brand { display: flex; align-items: center; gap: 0.6rem; font-weight: 700; font-size: 1.1rem; color: #16202e; text-decoration: none; }
+      h1 { font-size: 1.65rem; letter-spacing: -0.02em; margin: 1.5rem 0 0.75rem; color: #16202e; }
+      p { line-height: 1.65; margin: 0 0 1rem; color: #5d6b7d; }
+      ul { padding-left: 1.2rem; line-height: 1.7; color: #5d6b7d; }
+      .actions { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.5rem; }
+      .btn { display: inline-flex; align-items: center; justify-content: center; padding: 0.65rem 1rem; border-radius: 10px; font-weight: 600; text-decoration: none; cursor: pointer; border: 1px solid transparent; font-size: 0.95rem; }
+      .btn-primary { background: #1f5fbf; color: #fff; }
+      .btn-secondary { background: #fff; border-color: #c6d0dc; color: #16202e; }
+      a { color: #1f5fbf; }
+      .note { font-size: 0.85rem; color: #7d8998; margin-top: 1.5rem; }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <a class="brand" href="/">
+        <svg width="32" height="32" viewBox="0 0 512 512" aria-hidden="true">
+          <rect width="512" height="512" rx="112" fill="#1f5fbf" />
+          <path d="M150 120h150l76 76v180a28 28 0 0 1-28 28H150a28 28 0 0 1-28-28V148a28 28 0 0 1 28-28z" fill="#fff" />
+          <path d="M186 250h124M186 300h92" stroke="#1f5fbf" stroke-width="22" stroke-linecap="round" />
+          <circle cx="352" cy="352" r="74" fill="#1c7d54" />
+          <path d="M316 352l25 25 46-50" fill="none" stroke="#fff" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        FormReady
+      </a>
+      <h1>This page is not available offline</h1>
+      <p>
+        Your connection appears to be offline, and this particular page was not stored on your device. The tools you
+        have already visited should still work from the application cache.
+      </p>
+      <ul>
+        <li>Files are still processed on this device, never uploaded.</li>
+        <li>Return to a page you opened before the connection dropped.</li>
+        <li>When you are back online, reload to update the cached app.</li>
+      </ul>
+      <div class="actions">
+        <button class="btn btn-primary" type="button" onclick="window.location.reload()">Try again</button>
+        <a class="btn btn-secondary" href="/">Go to the homepage</a>
+      </div>
+      <p class="note">
+        On mobile, check that airplane mode is off. On a computer, check the network cable or Wi-Fi connection.
+      </p>
+    </main>
+  </body>
+</html>
