@@ -109,4 +109,4 @@ The full policy is at `/privacy-policy`.
 
 ## License
 
-MIT. See `LICENSE` if present; otherwise the repository is published under the MIT terms stated in `package.json`.
+MIT. See [`LICENSE`](LICENSE).
