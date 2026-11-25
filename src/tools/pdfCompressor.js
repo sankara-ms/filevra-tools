@@ -52,7 +52,7 @@ export async function compressPdf(file, { dpi = 120, quality = 0.65, onProgress 
     await source.destroy()
   }
 
-  output.setProducer('FormReady')
+  output.setProducer('Filevra')
   output.setTitle('Compressed document')
   const bytes = await output.save()
   const blob = new Blob([bytes], { type: 'application/pdf' })

@@ -19,7 +19,7 @@ export async function mergePdfs(files, { onProgress } = {}) {
   }
 
   merged.setTitle('Merged document')
-  merged.setProducer('FormReady')
+  merged.setProducer('Filevra')
   const bytes = await merged.save()
   return {
     blob: new Blob([bytes], { type: 'application/pdf' }),

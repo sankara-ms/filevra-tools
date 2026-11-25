@@ -6,7 +6,7 @@ export function loadAdSenseScript(client) {
   if (scriptPromise) return scriptPromise
 
   scriptPromise = new Promise((resolve, reject) => {
-    const existing = document.querySelector('script[data-formready-adsense]')
+    const existing = document.querySelector('script[data-filevra-adsense]')
     if (existing) {
       if (existing.dataset.loaded === 'true') resolve()
       else {
@@ -22,7 +22,7 @@ export function loadAdSenseScript(client) {
     script.async = true
     script.crossOrigin = 'anonymous'
     script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${encodeURIComponent(client)}`
-    script.dataset.formreadyAdsense = 'true'
+    script.dataset.filevraAdsense = 'true'
     script.addEventListener('load', () => {
       script.dataset.loaded = 'true'
       resolve()

@@ -7,7 +7,7 @@ cleanupOutdatedCaches()
 precacheAndRoute(self.__WB_MANIFEST)
 
 const pageStrategy = new NetworkFirst({
-  cacheName: 'formready-pages-v1',
+  cacheName: 'filevra-pages-v1',
   networkTimeoutSeconds: 4,
 })
 

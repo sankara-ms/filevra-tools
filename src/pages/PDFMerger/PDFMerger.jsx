@@ -42,7 +42,7 @@ const FORMATS = [
 ]
 
 const LIMITS = [
-  'Password-protected or encrypted PDFs cannot be merged. Remove the password first; FormReady does not ask for one.',
+  'Password-protected or encrypted PDFs cannot be merged. Remove the password first; Filevra does not ask for one.',
   'Bookmarks, outlines, links and form fields may not survive the merge because pages are copied into a new document.',
   'Pages keep their original size and orientation. Mixed A4 and Letter pages stay mixed.',
   'The merged file is roughly the sum of the inputs, plus a small PDF overhead. Merging does not compress images.',
@@ -76,7 +76,7 @@ const FAQS = [
       'Each input can be up to 50 MB and the list is capped at 30 files. Browser memory is the practical limit: hundreds of pages with heavy scans may be slow on phones.',
   },
   {
-    question: 'Are the files uploaded to FormReady?',
+    question: 'Are the files uploaded to Filevra?',
     answer:
       'No. Each file is read from your device, merged in this tab and offered as a download. There is no server copy and no document history.',
   },
@@ -167,12 +167,12 @@ export default function PDFMerger() {
   return (
     <>
       <SEO
-        title="Merge PDF Files Online - Combine PDFs in Your Browser | FormReady"
+        title="Merge PDF Files Online - Combine PDFs in Your Browser | Filevra"
         description="Merge up to 30 PDF files into one document, reorder them and download the result. Pages are copied without re-compression and files never leave your device."
         path="/merge-pdf"
         jsonLd={[
           webAppJsonLd({
-            name: 'FormReady PDF Merger',
+            name: 'Filevra PDF Merger',
             description: 'Combine PDF files into one document in the browser, with no uploads.',
             path: '/merge-pdf',
           }),
@@ -215,7 +215,7 @@ export default function PDFMerger() {
             </p>
             <h2>Encrypted and damaged files</h2>
             <p>
-              A password-protected PDF cannot be read without the password, and FormReady never asks you to send one.
+              A password-protected PDF cannot be read without the password, and Filevra never asks you to send one.
               Remove the protection in a PDF reader first. Damaged downloads usually fail the same way; fetch the file
               again from the sender before assuming the merger is at fault.
             </p>

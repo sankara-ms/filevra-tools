@@ -7,8 +7,8 @@ export default function NotFound() {
   return (
     <>
       <SEO
-        title="Page Not Found | FormReady"
-        description="The page you tried to open does not exist. Use the links to return to the FormReady tools."
+        title="Page Not Found | Filevra"
+        description="The page you tried to open does not exist. Use the links to return to the Filevra tools."
         path="/404"
         noindex
       />

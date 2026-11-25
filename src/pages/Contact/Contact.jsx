@@ -5,14 +5,14 @@ import Icon from '../../components/Icon/Icon'
 import { Alert } from '../../components/ErrorMessage/ErrorMessage'
 import { CONTACT_EMAIL, SITE_NAME } from '../../config/site'
 
-const REPO_ISSUES = 'https://github.com/sankara-ms/formready-tools/issues'
+const REPO_ISSUES = 'https://github.com/sankara-ms/filevra-tools/issues'
 
 export default function Contact() {
   return (
     <>
       <SEO
-        title="Contact FormReady - Report a Problem or Ask a Question"
-        description="How to contact FormReady about a bug, a correction or a privacy question, and what to include in a useful report. Please do not send personal documents."
+        title="Contact Filevra - Report a Problem or Ask a Question"
+        description="How to contact Filevra about a bug, a correction or a privacy question, and what to include in a useful report. Please do not send personal documents."
         path="/contact"
       />
 

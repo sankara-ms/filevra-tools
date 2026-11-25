@@ -59,7 +59,7 @@ await ogPage.setContent(`<!doctype html>
       <circle cx="352" cy="352" r="74" fill="#1c7d54"/>
       <path d="M316 352l25 25 46-50" fill="none" stroke="#fff" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <span>FormReady</span>
+    <span>Filevra</span>
   </div>
   <h1>Prepare your images and documents <span class="accent">in seconds</span></h1>
   <div>

@@ -1,9 +1,9 @@
 {
-  "name": "formready-tools",
+  "name": "filevra-tools",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "FormReady - free browser-based tools to resize, compress and convert images and PDFs.",
+  "description": "Filevra - free browser-based tools to resize, compress and convert images and PDFs.",
   "license": "MIT",
   "engines": {
     "node": ">=20"

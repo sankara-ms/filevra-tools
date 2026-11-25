@@ -17,7 +17,7 @@ export default function Footer() {
               </Link>
               <p className="mt-3">
                 Free browser-based tools to prepare images and PDF documents. Files are processed on your device and
-                are never uploaded to a FormReady server.
+                are never uploaded to a Filevra server.
               </p>
             </div>
           </div>

@@ -72,7 +72,7 @@ export function BrandMark({ size = 36 }) {
       height={size}
       viewBox="0 0 512 512"
       role="img"
-      aria-label="FormReady logo"
+      aria-label="Filevra logo"
       className="fr-brand-mark-svg"
     >
       <rect width="512" height="512" rx="112" fill="#1f5fbf" />

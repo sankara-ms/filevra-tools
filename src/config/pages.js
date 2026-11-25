@@ -1,6 +1,6 @@
 // Route metadata shared by the router, sitemap generator and tests.
 export const PAGES = [
-  { path: '/', title: 'FormReady - Free Image and PDF Tools', changefreq: 'weekly', priority: '1.0' },
+  { path: '/', title: 'Filevra - Free Image and PDF Tools', changefreq: 'weekly', priority: '1.0' },
   {
     path: '/image-compressor',
     title: 'Image Compressor - Reduce Image Size to a Target KB',
@@ -28,8 +28,8 @@ export const PAGES = [
     changefreq: 'monthly',
     priority: '0.7',
   },
-  { path: '/about', title: 'About FormReady', changefreq: 'yearly', priority: '0.5' },
-  { path: '/contact', title: 'Contact FormReady', changefreq: 'yearly', priority: '0.5' },
+  { path: '/about', title: 'About Filevra', changefreq: 'yearly', priority: '0.5' },
+  { path: '/contact', title: 'Contact Filevra', changefreq: 'yearly', priority: '0.5' },
   { path: '/privacy-policy', title: 'Privacy Policy', changefreq: 'yearly', priority: '0.4' },
   { path: '/terms', title: 'Terms and Conditions', changefreq: 'yearly', priority: '0.4' },
 ]

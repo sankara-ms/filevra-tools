@@ -8,8 +8,8 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About FormReady - Private Browser-Based File Tools"
-        description="FormReady is an independent project building small, honest tools for images and PDFs. Files are processed in your browser, and every tool states its real limits."
+        title="About Filevra - Private Browser-Based File Tools"
+        description="Filevra is an independent project building small, honest tools for images and PDFs. Files are processed in your browser, and every tool states its real limits."
         path="/about"
       />
 

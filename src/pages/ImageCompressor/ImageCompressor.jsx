@@ -173,12 +173,12 @@ export default function ImageCompressor() {
   return (
     <>
       <SEO
-        title="Image Compressor - Reduce Image Size to 100 KB or More | FormReady"
+        title="Image Compressor - Reduce Image Size to 100 KB or More | Filevra"
         description="Compress a JPG, PNG or WebP image to a target size such as 100 KB, 200 KB or 1 MB. Browser-based, no upload, with the real before-and-after file size."
         path="/image-compressor"
         jsonLd={[
           webAppJsonLd({
-            name: 'FormReady Image Compressor',
+            name: 'Filevra Image Compressor',
             description:
               'Compress images to a target file size in the browser. Supports JPG, PNG and WebP with no uploads.',
             path: '/image-compressor',
@@ -230,7 +230,7 @@ export default function ImageCompressor() {
               PNG.
             </p>
             <p>
-              Everything happens on this device. The tool does not send the image to a FormReady server, does not keep
+              Everything happens on this device. The tool does not send the image to a Filevra server, does not keep
               a copy, and does not send file details to analytics.
             </p>
           </>
@@ -370,7 +370,7 @@ export default function ImageCompressor() {
               ]}
               warning={
                 result.usedOriginal
-                  ? 'Re-encoding did not make the file smaller, so FormReady kept your original. Converting it again would only lose quality.'
+                  ? 'Re-encoding did not make the file smaller, so Filevra kept your original. Converting it again would only lose quality.'
                   : !result.hitTarget
                     ? 'The target could not be reached without destroying the image. Download this result or choose a larger target.'
                     : null

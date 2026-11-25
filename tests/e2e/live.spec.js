@@ -29,6 +29,6 @@ test.describe('live deployment smoke test', () => {
     test.skip(!LIVE_URL, 'Set LIVE_URL to run the live smoke test.')
     const response = await request.get(`${LIVE_URL}/this-page-does-not-exist`, { failOnStatusCode: false })
     expect(response.status()).toBe(404)
-    expect(await response.text()).toContain('FormReady')
+    expect(await response.text()).toContain('Filevra')
   })
 })

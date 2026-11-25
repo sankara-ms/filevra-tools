@@ -21,7 +21,7 @@ export default function ImagePreparationGuide() {
   return (
     <>
       <SEO
-        title="Image Preparation Guide - Pixels, File Size and Compression | FormReady"
+        title="Image Preparation Guide - Pixels, File Size and Compression | Filevra"
         description="A practical guide to preparing photos and signatures for online forms: pixel dimensions, DPI, file size, formats and compression quality explained without jargon."
         path="/image-preparation-guide"
         type="article"
@@ -125,7 +125,7 @@ export default function ImagePreparationGuide() {
               photo squeezed to 20 KB looks rough no matter what quality setting is used.
             </p>
             <p>
-              FormReady's compressor searches for the highest quality that fits your target and only reduces dimensions
+              Filevra's compressor searches for the highest quality that fits your target and only reduces dimensions
               if it must. The result panel shows which compromise was made.
             </p>
 
@@ -172,7 +172,7 @@ export default function ImagePreparationGuide() {
             <h2 id="privacy">Keeping files private</h2>
             <p>
               Identity photos and signatures are sensitive. Prefer tools that process the file on your device, and avoid
-              uploading such documents to sites you do not trust. FormReady's tools run in the browser tab, so the image
+              uploading such documents to sites you do not trust. Filevra's tools run in the browser tab, so the image
               is not sent to a server. The trade-off is that the quality of the result depends on your device's
               browser, but the privacy benefit is real.
             </p>

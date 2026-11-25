@@ -7,17 +7,17 @@ The site is a static bundle: `npm run build` writes everything to `dist/`. There
 | Setting | Value |
 | --- | --- |
 | Platform | Cloudflare Pages |
-| Project name | `formready-tools` |
+| Project name | `filevra-tools` |
 | Production branch | `main` |
 | Build command | `npm run build` |
 | Output directory | `dist` |
-| Intended URL | `https://formready-tools.pages.dev` |
+| Intended URL | `https://filevra.app` |
 
 The URL above is the intended address derived from the project name. It is only real once Cloudflare reports the project as deployed and the checks below pass. If the name is already taken, Cloudflare assigns a different subdomain; in that case update `VITE_SITE_URL` and rebuild so canonical tags and the sitemap match.
 
 ## Option A: Git integration (recommended)
 
-1. Push the repository to GitHub (`sankara-ms/formready-tools`).
+1. Push the repository to GitHub (`sankara-ms/filevra-tools`).
 2. In the Cloudflare dashboard open **Workers & Pages → Create → Pages → Connect to Git**.
 3. Authorise GitHub and select the repository.
 4. Set:
@@ -36,7 +36,7 @@ The URL above is the intended address derived from the project name. It is only 
 
 ```bash
 npm run build
-npx wrangler pages deploy dist --project-name formready-tools
+npx wrangler pages deploy dist --project-name filevra-tools
 ```
 
 This requires an authenticated Wrangler session (`npx wrangler login`) or a `CLOUDFLARE_API_TOKEN` with Pages permissions. No credentials are stored in this repository. If authentication is unavailable, use Option A or ask the account owner to run the command.
@@ -70,7 +70,7 @@ Run these in order and record the results. Replace `<host>` with the real deploy
 
 1. **HTTP checks** — every public route returns 200:
    `/`, `/image-compressor`, `/photo-signature-resizer`, `/image-to-pdf`, `/merge-pdf`, `/compress-pdf`, `/image-preparation-guide`, `/pdf-preparation-guide`, `/about`, `/contact`, `/privacy-policy`, `/terms`.
-2. **Error page** — `/this-page-does-not-exist` returns **404** and shows the FormReady not-found page.
+2. **Error page** — `/this-page-does-not-exist` returns **404** and shows the Filevra not-found page.
 3. **Assets** — `/manifest.json`, `/sw.js`, `/sitemap.xml`, `/robots.txt` return 200; the manifest is served as `application/manifest+json`.
 4. **Metadata** — view source on two pages: unique `<title>`, description, canonical matching the deployed host, and valid JSON-LD.
 5. **PWA** — install on desktop and on an Android device; confirm the icon and name. Disable the network and reload a visited page; it must render from the shell and the offline notice must appear where applicable.

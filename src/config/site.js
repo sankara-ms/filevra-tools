@@ -1,8 +1,8 @@
 const rawSiteUrl = typeof import.meta.env?.VITE_SITE_URL === 'string' ? import.meta.env.VITE_SITE_URL : ''
 
-export const SITE_NAME = 'FormReady'
-export const SITE_TAGLINE = 'Prepare Your Files. Ready to Go.'
-export const SITE_URL = (rawSiteUrl || 'https://formready-tools.pages.dev').replace(/\/+$/, '')
+export const SITE_NAME = 'Filevra'
+export const SITE_TAGLINE = 'Every file, ready to upload.'
+export const SITE_URL = (rawSiteUrl || 'https://filevra.app').replace(/\/+$/, '')
 export const CONTACT_EMAIL =
   typeof import.meta.env?.VITE_CONTACT_EMAIL === 'string' ? import.meta.env.VITE_CONTACT_EMAIL.trim() : ''
 export const OG_IMAGE = `${SITE_URL}/icons/og-image.png`

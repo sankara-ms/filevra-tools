@@ -19,7 +19,7 @@ export default function PDFPreparationGuide() {
   return (
     <>
       <SEO
-        title="PDF Preparation Guide - Merging, Compression and File Size | FormReady"
+        title="PDF Preparation Guide - Merging, Compression and File Size | Filevra"
         description="Understand why PDFs become large, how merging preserves page quality, when raster compression helps and when it destroys searchable text. Practical guidance, no jargon."
         path="/pdf-preparation-guide"
         type="article"
@@ -107,7 +107,7 @@ export default function PDFPreparationGuide() {
               reader, and the file may even grow because the original text was already efficient.
             </p>
             <p>
-              FormReady's <Link to="/compress-pdf">PDF compressor</Link> uses the second method, openly and with a
+              Filevra's <Link to="/compress-pdf">PDF compressor</Link> uses the second method, openly and with a
               warning. It compares the result with the original and refuses to present a larger file as a success. If
               you need to keep searchable text, keep the original or use a structural optimiser instead.
             </p>
@@ -136,7 +136,7 @@ export default function PDFPreparationGuide() {
               selectable, so verify by trying to copy it.
             </p>
             <p>
-              If you use a browser-based tool, remember that the document is handed to a web page. FormReady runs its
+              If you use a browser-based tool, remember that the document is handed to a web page. Filevra runs its
               processing in the tab and does not upload files, but the general advice still applies: use a browser you
               trust, on a device you control.
             </p>

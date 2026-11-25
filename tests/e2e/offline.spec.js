@@ -8,15 +8,15 @@ test.describe('offline support', () => {
     await expect.poll(() => page.evaluate(() => Boolean(navigator.serviceWorker.controller))).toBe(true)
 
     await page.goto('/about')
-    await expect(page.getByRole('heading', { level: 1 })).toHaveText('About FormReady')
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('About Filevra')
 
     await context.setOffline(true)
 
     await page.reload()
-    await expect(page.getByRole('heading', { level: 1 })).toHaveText('About FormReady')
+    await expect(page.getByRole('heading', { level: 1 })).toHaveText('About Filevra')
 
     await page.goto('/terms')
-    await expect(page.getByRole('link', { name: 'FormReady home' })).toBeVisible()
+    await expect(page.getByRole('link', { name: 'Filevra home' })).toBeVisible()
 
     await context.setOffline(false)
   })

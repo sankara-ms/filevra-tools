@@ -72,7 +72,7 @@ export default function ToolPageShell({
                 Private by design
               </h3>
               <p className="fr-aside-note">
-                Your file is handled in this browser tab. It is not uploaded to a FormReady server, stored in a
+                Your file is handled in this browser tab. It is not uploaded to a Filevra server, stored in a
                 database or sent to analytics.{' '}
                 <Link to="/privacy-policy">How this works</Link>.
               </p>
@@ -138,7 +138,7 @@ export default function ToolPageShell({
             <h2>Privacy and your files</h2>
             <p>
               The file is read by JavaScript running in this tab and the result is created in the same tab. Nothing is
-              uploaded, and FormReady does not keep a copy. Closing or reloading the page discards the working data.
+              uploaded, and Filevra does not keep a copy. Closing or reloading the page discards the working data.
               The only thing stored in your browser is your advertising choice, and only when advertising is enabled.
             </p>
           </div>

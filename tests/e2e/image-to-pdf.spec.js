@@ -23,7 +23,7 @@ test.describe('image to PDF', () => {
       page.waitForEvent('download'),
       page.getByTestId('download-result').click(),
     ])
-    expect(download.suggestedFilename()).toBe('formready-images.pdf')
+    expect(download.suggestedFilename()).toBe('filevra-images.pdf')
 
     const output = await download.path()
     const bytes = fs.readFileSync(output)

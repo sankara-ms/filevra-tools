@@ -9,8 +9,8 @@ export default function PrivacyPolicy() {
   return (
     <>
       <SEO
-        title="Privacy Policy - How FormReady Handles Your Files"
-        description="FormReady processes images and PDFs in your browser. This policy explains local processing, the service worker cache, hosting logs, advertising consent and your choices."
+        title="Privacy Policy - How Filevra Handles Your Files"
+        description="Filevra processes images and PDFs in your browser. This policy explains local processing, the service worker cache, hosting logs, advertising consent and your choices."
         path="/privacy-policy"
       />
 
@@ -52,7 +52,7 @@ export default function PrivacyPolicy() {
             <h2>What is stored on your device</h2>
             <p>
               <strong>Advertising consent.</strong> If advertising is enabled, the site stores your choice (allow or
-              decline) in your browser’s localStorage under the key <span className="fr-mono">formready-ad-consent-v1</span>.
+              decline) in your browser’s localStorage under the key <span className="fr-mono">filevra-ad-consent-v1</span>.
               It contains no document data and no identifier that links you to a file.
             </p>
             <p>

@@ -7,7 +7,7 @@ This guide describes how the site is prepared for Google AdSense and what must h
 - `VITE_ADSENSE_CLIENT`, `VITE_ADSENSE_SLOT_CONTENT` and `VITE_ADSENSE_SLOT_RESULT` are empty by default.
 - While they are empty, `AdSlot` renders nothing and the consent notice is not shown.
 - The AdSense script loads only after both a publisher ID **and** an explicit "Allow advertising" choice.
-- The consent choice is stored under `formready-ad-consent-v1` in `localStorage`; documents are never stored.
+- The consent choice is stored under `filevra-ad-consent-v1` in `localStorage`; documents are never stored.
 - Placements sit away from upload, compress and download controls. There is no ad above a tool's primary action and no ad between a result and its download button.
 
 ## Prerequisites before applying
@@ -24,7 +24,7 @@ This guide describes how the site is prepared for Google AdSense and what must h
 ## Application steps
 
 1. Go to `https://adsense.google.com` and sign in with the Google account that should own the site.
-2. Add the site URL (the exact production origin, for example `https://formready-tools.pages.dev`).
+2. Add the site URL (the exact production origin, for example `https://filevra.app`).
 3. Choose the payment country and accept the terms. These are legal declarations about the applicant, not settings to guess.
 4. Add the AdSense verification snippet only through the supported mechanism in this codebase:
    - Prefer the **site ownership** verification in AdSense using the same method as Search Console (HTML file or meta tag), rather than a raw script tag.

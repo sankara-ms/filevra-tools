@@ -4,7 +4,7 @@ test.describe('homepage', () => {
   test('renders the hero, all five tools and the static facts', async ({ page }) => {
     await page.goto('/')
 
-    await expect(page).toHaveTitle(/FormReady/)
+    await expect(page).toHaveTitle(/Filevra/)
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(
       'Prepare Your Images and Documents in Seconds',
     )
@@ -12,7 +12,7 @@ test.describe('homepage', () => {
     await expect(page.getByRole('heading', { name: 'Popular tools' })).toBeVisible()
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       'href',
-      'https://formready-tools.pages.dev/',
+      'https://filevra.app/',
     )
   })
 
@@ -39,7 +39,7 @@ test.describe('homepage', () => {
     await expect(page).toHaveURL(/\/image-compressor$/)
     await expect(page.getByRole('heading', { level: 1 })).toContainText(/Compress/i)
 
-    await page.getByRole('link', { name: 'FormReady home' }).click()
+    await page.getByRole('link', { name: 'Filevra home' }).click()
     await expect(page).toHaveURL(/\/$/)
   })
 
@@ -47,7 +47,7 @@ test.describe('homepage', () => {
     await page.goto('/')
     await page.getByRole('navigation', { name: 'Main navigation' }).getByRole('link', { name: 'About' }).click()
     await expect(page).toHaveURL(/\/about$/)
-    await expect(page.getByRole('heading', { level: 1 })).toContainText(/About FormReady/i)
+    await expect(page.getByRole('heading', { level: 1 })).toContainText(/About Filevra/i)
 
     await page.getByRole('contentinfo').getByRole('link', { name: 'Contact' }).click()
     await expect(page).toHaveURL(/\/contact$/)

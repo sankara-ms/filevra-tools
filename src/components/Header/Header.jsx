@@ -61,9 +61,9 @@ export default function Header() {
   return (
     <header className="fr-header">
       <div className="fr-container fr-header-inner">
-        <Link to="/" className="fr-brand" aria-label="FormReady home">
+        <Link to="/" className="fr-brand" aria-label="Filevra home">
           <BrandMark size={36} />
-          <span>FormReady</span>
+          <span>Filevra</span>
         </Link>
 
         <nav className="fr-nav" aria-label="Main navigation">

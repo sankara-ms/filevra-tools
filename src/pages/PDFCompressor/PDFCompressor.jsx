@@ -58,7 +58,7 @@ const FAQS = [
   {
     question: 'Why did my PDF get bigger?',
     answer:
-      'A PDF made mostly of text and vector lines is already compact. Turning each page into a JPEG can add more data than the original contained. When that happens, FormReady reports the increase, does not offer the re-encoded file, and suggests keeping the original.',
+      'A PDF made mostly of text and vector lines is already compact. Turning each page into a JPEG can add more data than the original contained. When that happens, Filevra reports the increase, does not offer the re-encoded file, and suggests keeping the original.',
   },
   {
     question: 'Will the text still be selectable after compression?',
@@ -71,7 +71,7 @@ const FAQS = [
       'Start with 120 DPI and 65% quality for documents that will be read on a screen or submitted through a portal. Use 150 DPI when small print must stay legible, and 96 DPI only when the size limit matters more than sharpness.',
   },
   {
-    question: 'Can FormReady compress a password-protected PDF?',
+    question: 'Can Filevra compress a password-protected PDF?',
     answer:
       'No. The document cannot be opened without the password, and the tool never asks you to transmit one. Open the PDF in a reader, remove the password, save a copy, and compress that copy.',
   },
@@ -83,7 +83,7 @@ const FAQS = [
   {
     question: 'Is my PDF uploaded anywhere?',
     answer:
-      'No. The file is read and re-rendered entirely in this browser tab. FormReady does not receive the document, and closing the page discards the working data.',
+      'No. The file is read and re-rendered entirely in this browser tab. Filevra does not receive the document, and closing the page discards the working data.',
   },
 ]
 
@@ -145,12 +145,12 @@ export default function PDFCompressor() {
   return (
     <>
       <SEO
-        title="Compress PDF Online - Reduce Scanned PDF Size | FormReady"
+        title="Compress PDF Online - Reduce Scanned PDF Size | Filevra"
         description="Reduce the size of scanned or image-heavy PDFs by re-rendering pages at a lower resolution. Choose quality and DPI and see an honest comparison with the original."
         path="/compress-pdf"
         jsonLd={[
           webAppJsonLd({
-            name: 'FormReady PDF Compressor',
+            name: 'Filevra PDF Compressor',
             description:
               'Compress scanned or image-heavy PDF files in the browser by re-rendering pages at a lower resolution.',
             path: '/compress-pdf',

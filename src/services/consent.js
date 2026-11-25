@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'formready-ad-consent-v1'
+const STORAGE_KEY = 'filevra-ad-consent-v1'
 const listeners = new Set()
 
 export function getStoredConsent() {

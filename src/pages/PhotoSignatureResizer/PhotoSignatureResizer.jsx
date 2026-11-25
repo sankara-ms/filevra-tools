@@ -46,7 +46,7 @@ const LIMITS = [
   'This tool does not crop, rotate, straighten or remove backgrounds. Prepare the framing in a photo editor first.',
   'When a kilobyte limit cannot be met at the exact pixels you entered, the tool keeps those pixels and tells you the target was missed. It does not silently change your dimensions.',
   'Transparent pixels become white because the output is JPEG, which matches most form requirements.',
-  'Requirements differ between organisations. FormReady does not guess exam or application presets; use the numbers on your own instructions.',
+  'Requirements differ between organisations. Filevra does not guess exam or application presets; use the numbers on your own instructions.',
 ]
 
 const FAQS = [
@@ -229,12 +229,12 @@ export default function PhotoSignatureResizer() {
   return (
     <>
       <SEO
-        title="Photo and Signature Resizer - Exact Pixel Width and Height | FormReady"
+        title="Photo and Signature Resizer - Exact Pixel Width and Height | Filevra"
         description="Resize a photo or signature to exact pixel dimensions, lock the aspect ratio and cap the file size. The image is resized locally in your browser with no upload."
         path="/photo-signature-resizer"
         jsonLd={[
           webAppJsonLd({
-            name: 'FormReady Photo and Signature Resizer',
+            name: 'Filevra Photo and Signature Resizer',
             description:
               'Resize photos and signatures to exact pixel dimensions in the browser, with an optional file size limit.',
             path: '/photo-signature-resizer',
@@ -271,7 +271,7 @@ export default function PhotoSignatureResizer() {
             </p>
             <h2>Stretching versus scaling</h2>
             <p>
-              With the aspect ratio locked, FormReady recalculates one side as you edit the other, so the picture keeps
+              With the aspect ratio locked, Filevra recalculates one side as you edit the other, so the picture keeps
               its natural proportions. Unlocking allows two independent numbers, which is occasionally useful for
               squeezing a signature into a narrow box, but faces and lettering will look stretched if the change is
               large. The result panel always states the final dimensions that were produced.

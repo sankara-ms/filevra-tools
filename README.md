@@ -1,8 +1,8 @@
-# FormReady
+# Filevra
 
-**Prepare Your Files. Ready to Go.**
+**Every file, ready to upload.**
 
-FormReady is a free, browser-based utility site for preparing images and PDFs for online forms, applications and document uploads. Every tool runs entirely in the visitor's browser: files are never uploaded to a server, stored in a database, or sent to an analytics service.
+Filevra is a free, browser-based utility site for preparing images and PDFs for online forms, applications and document uploads. Every tool runs entirely in the visitor's browser: files are never uploaded to a server, stored in a database, or sent to an analytics service.
 
 ## Tools
 
@@ -60,7 +60,7 @@ Copy `.env.example` to `.env` for local work. All values are public build-time v
 
 | Variable | Purpose |
 | --- | --- |
-| `VITE_SITE_URL` | Canonical origin used for canonical tags, Open Graph and the sitemap. Defaults to `https://formready-tools.pages.dev`. |
+| `VITE_SITE_URL` | Canonical origin used for canonical tags, Open Graph and the sitemap. Defaults to `https://filevra.app`. |
 | `VITE_CONTACT_EMAIL` | Address shown on `/contact`. When empty, the page hides the address and points to the public issue tracker. |
 | `VITE_ADSENSE_CLIENT` | AdSense publisher ID (`ca-pub-…`). Ads and the consent notice stay disabled while empty. |
 | `VITE_ADSENSE_SLOT_CONTENT` | Ad slot ID for in-content placements. |

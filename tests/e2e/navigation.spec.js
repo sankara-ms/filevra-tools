@@ -10,8 +10,8 @@ const ROUTES = [
   { path: '/compress-pdf', title: /Compress PDF Online/, heading: 'Compress a PDF file' },
   { path: '/image-preparation-guide', title: /Image Preparation Guide/, heading: 'Image preparation guide' },
   { path: '/pdf-preparation-guide', title: /PDF Preparation Guide/, heading: 'PDF preparation guide' },
-  { path: '/about', title: /About FormReady/, heading: 'About FormReady' },
-  { path: '/contact', title: /Contact FormReady/, heading: 'Contact FormReady' },
+  { path: '/about', title: /About Filevra/, heading: 'About Filevra' },
+  { path: '/contact', title: /Contact Filevra/, heading: 'Contact Filevra' },
   { path: '/privacy-policy', title: /Privacy Policy/, heading: 'Privacy Policy' },
   { path: '/terms', title: /Terms and Conditions/, heading: 'Terms and Conditions' },
 ]
@@ -27,7 +27,7 @@ test.describe('navigation and page metadata', () => {
       await expect(page).toHaveTitle(route.title)
 
       const canonical = await page.locator('link[rel="canonical"]').getAttribute('href')
-      expect(canonical).toBe(`https://formready-tools.pages.dev${route.path === '/' ? '/' : route.path}`)
+      expect(canonical).toBe(`https://filevra.app${route.path === '/' ? '/' : route.path}`)
 
       const description = await page.locator('meta[name="description"]').getAttribute('content')
       expect(description?.length ?? 0).toBeGreaterThan(40)
@@ -68,10 +68,10 @@ test.describe('navigation and page metadata', () => {
     expect(sitemap.status()).toBe(200)
     const xml = await sitemap.text()
     expect(xml).toContain('<urlset')
-    expect(xml).toContain('https://formready-tools.pages.dev/image-compressor')
+    expect(xml).toContain('https://filevra.app/image-compressor')
 
     const robots = await request.get('/robots.txt')
     expect(robots.status()).toBe(200)
-    expect(await robots.text()).toContain('Sitemap: https://formready-tools.pages.dev/sitemap.xml')
+    expect(await robots.text()).toContain('Sitemap: https://filevra.app/sitemap.xml')
   })
 })

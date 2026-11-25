@@ -6,7 +6,7 @@ test.describe('PWA assets', () => {
     expect(response.status()).toBe(200)
 
     const manifest = await response.json()
-    expect(manifest.name).toContain('FormReady')
+    expect(manifest.name).toContain('Filevra')
     expect(manifest.start_url).toBe('/')
     expect(manifest.display).toBe('standalone')
 
@@ -24,11 +24,11 @@ test.describe('PWA assets', () => {
   test('serves the service worker and offline page', async ({ request }) => {
     const sw = await request.get('/sw.js')
     expect(sw.status()).toBe(200)
-    expect(await sw.text()).toContain('formready-pages-v1')
+    expect(await sw.text()).toContain('filevra-pages-v1')
 
     const offline = await request.get('/offline.html')
     expect(offline.status()).toBe(200)
-    expect(await offline.text()).toContain('FormReady')
+    expect(await offline.text()).toContain('Filevra')
   })
 
   test('registers the service worker in the browser', async ({ page }) => {

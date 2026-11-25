@@ -9,8 +9,8 @@ export default function Terms() {
   return (
     <>
       <SEO
-        title="Terms and Conditions - Using FormReady Tools"
-        description="The terms that apply when you use FormReady: acceptable use, your responsibility for files and results, no warranty, and limits of liability."
+        title="Terms and Conditions - Using Filevra Tools"
+        description="The terms that apply when you use Filevra: acceptable use, your responsibility for files and results, no warranty, and limits of liability."
         path="/terms"
       />
 

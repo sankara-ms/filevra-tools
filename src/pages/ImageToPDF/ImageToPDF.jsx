@@ -194,12 +194,12 @@ export default function ImageToPDF() {
   return (
     <>
       <SEO
-        title="Image to PDF - Combine JPG and PNG Images into One PDF | FormReady"
+        title="Image to PDF - Combine JPG and PNG Images into One PDF | Filevra"
         description="Convert up to 20 JPG, PNG or WebP images into a single A4 PDF in the order you choose. The conversion happens in your browser, with no upload."
         path="/image-to-pdf"
         jsonLd={[
           webAppJsonLd({
-            name: 'FormReady Image to PDF Converter',
+            name: 'Filevra Image to PDF Converter',
             description: 'Combine images into a single A4 PDF in the browser, with reordering and no uploads.',
             path: '/image-to-pdf',
           }),
@@ -225,7 +225,7 @@ export default function ImageToPDF() {
             <h2>How images are placed on each page</h2>
             <p>
               Every image becomes its own A4 portrait page. The image is scaled to fit inside a printable area with a
-              36-point margin, centred horizontally and vertically, and drawn on a white background. FormReady does not
+              36-point margin, centred horizontally and vertically, and drawn on a white background. Filevra does not
               enlarge an image beyond its original size, so a small picture stays small instead of turning blurry.
             </p>
             <p>
@@ -324,7 +324,7 @@ export default function ImageToPDF() {
                 { label: 'Pages', value: String(result.pageCount) },
                 { label: 'PDF size', value: formatBytes(result.blob.size) },
               ]}
-              onDownload={() => downloadBlob(result.blob, 'formready-images.pdf')}
+              onDownload={() => downloadBlob(result.blob, 'filevra-images.pdf')}
               downloadLabel="Download PDF"
               onReset={reset}
             >

@@ -21,7 +21,7 @@ const HOME_FAQS = [
       'No. Each tool reads the file with JavaScript in your browser and creates the result in the same tab. There is no upload step and no server-side copy of your document.',
   },
   {
-    question: 'Can FormReady compress an image to exactly 100 KB?',
+    question: 'Can Filevra compress an image to exactly 100 KB?',
     answer:
       'The compressor aims for the target you enter and reports the real result. Reaching an exact kilobyte value is not always possible because JPEG encoding works in discrete quality steps. If the target cannot be reached without severe quality loss, the tool tells you and keeps the smallest result it could produce.',
   },
@@ -41,7 +41,7 @@ const HOME_FAQS = [
       'No account is needed for any tool. There is no sign-up, no login and no newsletter requirement.',
   },
   {
-    question: 'Is FormReady free?',
+    question: 'Is Filevra free?',
     answer:
       'Yes. The tools are free to use and add no watermark. Advertising may be added later to cover hosting costs; it is loaded only after you agree, and it never receives your files.',
   },
@@ -69,7 +69,7 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="FormReady - Free Image and PDF Tools That Run in Your Browser"
+        title="Filevra - Free Image and PDF Tools That Run in Your Browser"
         description="Compress images to a target size, resize photos and signatures, convert images to PDF, merge PDFs and compress PDFs. Free, private and browser-based."
         path="/"
         jsonLd={[websiteJsonLd(), faqJsonLd(HOME_FAQS)]}
@@ -107,7 +107,7 @@ export default function Home() {
               <li>
                 <Icon name="ShieldCheck" size={18} />
                 <span>
-                  The file is opened by JavaScript on your device. There is no upload queue and no FormReady storage
+                  The file is opened by JavaScript on your device. There is no upload queue and no Filevra storage
                   bucket.
                 </span>
               </li>
@@ -190,7 +190,7 @@ export default function Home() {
                 Your files stay where they belong
               </h2>
               <p className="fr-muted mb-3">
-                Most online converters ask you to upload a document and wait for a server to send it back. FormReady
+                Most online converters ask you to upload a document and wait for a server to send it back. Filevra
                 takes a different route: the browser downloads the tool once, then does the work itself.
               </p>
               <p className="fr-muted mb-4">
@@ -254,11 +254,11 @@ export default function Home() {
             </h2>
             <p className="fr-muted mb-3">
               After your first successful visit, a service worker stores the application shell — the pages, styles and
-              scripts needed to run the tools. Open FormReady again without a connection and the cached tools still
+              scripts needed to run the tools. Open Filevra again without a connection and the cached tools still
               work, because the files were always processed locally.
             </p>
             <p className="fr-muted mb-0">
-              You can also install FormReady as an app. Use the install icon in the address bar of Chrome or Edge, or
+              You can also install Filevra as an app. Use the install icon in the address bar of Chrome or Edge, or
               choose “Add to Home screen” in your browser menu. On iPhone and iPad, use Share → Add to Home Screen.
             </p>
           </div>
