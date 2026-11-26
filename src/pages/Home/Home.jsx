@@ -121,7 +121,9 @@ export default function Home() {
                   <Icon name={category.icon} size={17} />
                   <span className="fr-cat-tile__text">
                     <span className="fr-cat-tile__name">{category.name}</span>
-                    <span className="fr-cat-tile__count">{category.count} tools</span>
+                    <span className="fr-cat-tile__count">
+                      {category.count} {category.count === 1 ? 'tool' : 'tools'}
+                    </span>
                   </span>
                 </Link>
               </li>
