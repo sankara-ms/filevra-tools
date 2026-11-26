@@ -99,6 +99,19 @@ Run these in order and record the results. Replace `<host>` with the real deploy
 9. **GitHub Actions** — set the repository variable `LIVE_URL=https://<host>` so the weekly live smoke workflow runs. Actions → Live smoke test → Run workflow to confirm.
 10. **Usage counting** — complete `docs/usage-analytics.md`, then confirm `POST /api/track` returns 204, `/usage` accepts `USAGE_ADMIN_TOKEN`, and `/api/report` returns `{"sent":true}`. Until the D1 binding and secrets exist, these endpoints return 503 by design and the tools are unaffected.
 
+### After a release: submit for indexing
+
+```bash
+node scripts/submit-indexnow.mjs
+```
+
+It reads `public/<32-hex-key>.txt` (already deployed), fetches the live sitemap and posts every URL to
+`api.indexnow.org`, which feeds Bing, Yandex and Seznam. HTTP 202 means accepted, not indexed.
+
+Google ignores IndexNow. Verify the site in [Search Console](https://search.google.com/search-console) as a URL-prefix
+property, then submit `https://filevra-tools.pages.dev/sitemap.xml`. Bing Webmaster Tools accepts an import from Search
+Console. Brave uses its own crawler and has no submission form.
+
 ### Last verified: 2026-11-26 against `https://filevra-tools.pages.dev`
 
 - Routes `/`, `/tools`, `/image-compressor`, `/usage`, `/robots.txt`, `/sitemap.xml` → 200; canonical and sitemap use the Pages host.
