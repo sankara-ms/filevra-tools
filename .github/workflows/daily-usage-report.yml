@@ -33,7 +33,19 @@ jobs:
           DAY="$(date -d 'yesterday' +%F)"
           echo "Requesting the report for $DAY"
 
-          curl --fail-with-body --silent --show-error \
+          STATUS="$(curl --silent --show-error \
             --retry 3 --retry-delay 30 \
+            -o /tmp/report-body.txt -w '%{http_code}' \
             -H "Authorization: Bearer $USAGE_REPORT_TOKEN" \
-            "$SITE_URL/api/report?day=$DAY"
+            "$SITE_URL/api/report?day=$DAY")"
+          cat /tmp/report-body.txt; echo
+
+          if [ "$STATUS" = "200" ]; then
+            exit 0
+          fi
+          if [ "$STATUS" = "503" ]; then
+            echo "::warning::The site reports that email is not configured yet (RESEND_API_KEY). Skipping this run."
+            exit 0
+          fi
+          echo "The report request failed with HTTP $STATUS." >&2
+          exit 1
