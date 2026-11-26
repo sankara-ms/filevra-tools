@@ -12,7 +12,7 @@ test.describe('homepage', () => {
     await expect(page.getByRole('heading', { name: 'Popular tools' })).toBeVisible()
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
       'href',
-      'https://filevra.app/',
+      'https://filevra-tools.pages.dev/',
     )
   })
 

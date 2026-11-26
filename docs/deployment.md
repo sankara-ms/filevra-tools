@@ -2,18 +2,20 @@
 
 The site is a prerendered static bundle: `npm run build` writes everything to `dist/`. Pages also deploys the `functions/` directory for first-party usage counting (`/api/track`, `/api/usage`, `/api/report`); those functions need a D1 binding and secrets, described in `docs/usage-analytics.md`. Without them the site and all tools still work and only counting is disabled. This document describes the intended deployment and how to verify it. It is written as a checklist; **do not mark a deployment complete until the live checks below actually pass.**
 
-## Intended project
+## Current project
 
 | Setting | Value |
 | --- | --- |
 | Platform | Cloudflare Pages |
 | Project name | `filevra-tools` |
-| Production branch | `main` |
 | Build command | `npm run build` |
 | Output directory | `dist` |
-| Intended URL | `https://filevra.app` |
+| Site URL | `https://filevra-tools.pages.dev` |
+| Functions | `functions/` (uploaded with the deployment) |
+| Database binding | `USAGE_DB` → D1 `filevra-usage` (see `wrangler.toml`) |
+| Required secrets | `USAGE_ADMIN_TOKEN`, `USAGE_SALT`, `USAGE_REPORT_TOKEN`, plus `RESEND_API_KEY` for the daily email |
 
-The URL above is the intended address derived from the project name. It is only real once Cloudflare reports the project as deployed and the checks below pass. If the name is already taken, Cloudflare assigns a different subdomain; in that case update `VITE_SITE_URL` and rebuild so canonical tags and the sitemap match.
+`src/config/site.js` defaults to the Pages host, so a plain `npm run build` produces canonical tags, Open Graph URLs, `sitemap.xml` and `robots.txt` for the live address. Override with `VITE_SITE_URL` (bundle) and `SITE_URL` (sitemap script) when a custom domain replaces it. Deployments are direct uploads; there is no Git build on Cloudflare, so pushing to GitHub does not publish the site.
 
 ## Option A: Git integration (recommended)
 
@@ -32,14 +34,27 @@ The URL above is the intended address derived from the project name. It is only 
    - AdSense variables only after approval; leave empty otherwise
 6. Deploy. Wait for the build log to finish successfully.
 
-## Option B: Direct upload with Wrangler
+## Direct upload with Wrangler (the method in use)
 
 ```bash
 npm run build
 npx wrangler pages deploy dist --project-name filevra-tools
 ```
 
-This requires an authenticated Wrangler session (`npx wrangler login`) or a `CLOUDFLARE_API_TOKEN` with Pages permissions. No credentials are stored in this repository. If authentication is unavailable, use Option A or ask the account owner to run the command.
+`wrangler.toml` pins the output directory and the `USAGE_DB` binding so the same command works from any machine. This requires an authenticated Wrangler session (`npx wrangler login`) or a `CLOUDFLARE_API_TOKEN` with Pages permissions. No credentials are stored in this repository.
+
+One-time backend setup:
+
+```bash
+npx wrangler d1 create filevra-usage            # copy the id into wrangler.toml
+npx wrangler d1 execute filevra-usage --remote --file migrations/0001_usage.sql
+npx wrangler pages secret put USAGE_ADMIN_TOKEN --project-name filevra-tools
+npx wrangler pages secret put USAGE_SALT        --project-name filevra-tools
+npx wrangler pages secret put USAGE_REPORT_TOKEN --project-name filevra-tools
+npx wrangler pages secret put RESEND_API_KEY    --project-name filevra-tools   # for the daily email
+```
+
+Secrets are typed at the prompt (or piped on stdin); never put them in `wrangler.toml`, `.env` files or commits.
 
 ## What Cloudflare Pages handles automatically
 
@@ -83,6 +98,14 @@ Run these in order and record the results. Replace `<host>` with the real deploy
    On Windows Git Bash use `LIVE_URL=https://<host> npx playwright test --project=live`.
 9. **GitHub Actions** — set the repository variable `LIVE_URL=https://<host>` so the weekly live smoke workflow runs. Actions → Live smoke test → Run workflow to confirm.
 10. **Usage counting** — complete `docs/usage-analytics.md`, then confirm `POST /api/track` returns 204, `/usage` accepts `USAGE_ADMIN_TOKEN`, and `/api/report` returns `{"sent":true}`. Until the D1 binding and secrets exist, these endpoints return 503 by design and the tools are unaffected.
+
+### Last verified: 2026-11-26 against `https://filevra-tools.pages.dev`
+
+- Routes `/`, `/tools`, `/image-compressor`, `/usage`, `/robots.txt`, `/sitemap.xml` → 200; canonical and sitemap use the Pages host.
+- `POST /api/track` with a same-origin `Origin` → 204 and the row appears in the report; with a foreign origin → 403.
+- `/api/usage` without or with a wrong passcode → 401; with `USAGE_ADMIN_TOKEN` → JSON totals.
+- `/api/report` → 503 until `RESEND_API_KEY` exists; the daily email is therefore not active yet.
+- `/usage` in a browser: prerendered with `noindex`, passcode gate opens the report, live counts visible.
 
 ## Rollback
 

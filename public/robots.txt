@@ -3,4 +3,4 @@ Allow: /
 Disallow: /usage
 Disallow: /api/
 
-Sitemap: https://filevra.app/sitemap.xml
+Sitemap: https://filevra-tools.pages.dev/sitemap.xml

@@ -19,7 +19,7 @@ for (const category of CATEGORIES) {
       await expect(page.getByRole('heading', { level: 1 }), tool.path).toHaveText(tool.name)
       await expect(page.locator('link[rel="canonical"]'), tool.path).toHaveAttribute(
         'href',
-        `https://filevra.app${tool.path}`,
+        `https://filevra-tools.pages.dev${tool.path}`,
       )
       await expect(page.getByTestId('run-tool'), tool.path).toBeVisible()
       await page.waitForLoadState('networkidle')

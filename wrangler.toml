@@ -1,0 +1,8 @@
+name = "filevra-tools"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-01-01"
+
+[[d1_databases]]
+binding = "USAGE_DB"
+database_name = "filevra-usage"
+database_id = "1de346fb-a194-48d7-8c7a-ae903bdd319a"

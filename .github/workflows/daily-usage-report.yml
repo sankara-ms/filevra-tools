@@ -21,7 +21,7 @@ jobs:
           TZ: Asia/Kolkata
         run: |
           if [ -z "$SITE_URL" ]; then
-            echo "Set the repository variable SITE_URL to the deployed origin, for example https://filevra.app" >&2
+            echo "Set the repository variable SITE_URL to the deployed origin, for example https://filevra-tools.pages.dev" >&2
             exit 1
           fi
           if [ -z "$USAGE_REPORT_TOKEN" ]; then

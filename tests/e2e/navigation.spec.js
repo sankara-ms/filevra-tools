@@ -31,7 +31,7 @@ test.describe('navigation and page metadata', () => {
       await expect(page).toHaveTitle(route.title)
 
       const canonical = await page.locator('link[rel="canonical"]').getAttribute('href')
-      expect(canonical).toBe(`https://filevra.app${route.path === '/' ? '/' : route.path}`)
+      expect(canonical).toBe(`https://filevra-tools.pages.dev${route.path === '/' ? '/' : route.path}`)
 
       const description = await page.locator('meta[name="description"]').getAttribute('content')
       expect(description?.length ?? 0).toBeGreaterThan(40)
@@ -85,12 +85,12 @@ test.describe('navigation and page metadata', () => {
     expect(sitemap.status()).toBe(200)
     const xml = await sitemap.text()
     expect(xml).toContain('<urlset')
-    expect(xml).toContain('https://filevra.app/image-compressor')
+    expect(xml).toContain('https://filevra-tools.pages.dev/image-compressor')
 
     const robots = await request.get('/robots.txt')
     expect(robots.status()).toBe(200)
     const robotsText = await robots.text()
-    expect(robotsText).toContain('Sitemap: https://filevra.app/sitemap.xml')
+    expect(robotsText).toContain('Sitemap: https://filevra-tools.pages.dev/sitemap.xml')
     expect(robotsText).toContain('Disallow: /usage')
     expect(robotsText).toContain('Disallow: /api/')
   })

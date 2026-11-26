@@ -70,7 +70,7 @@ Copy `.env.example` to `.env` for local work. All values are public build-time v
 
 | Variable | Purpose |
 | --- | --- |
-| `VITE_SITE_URL` | Canonical origin used for canonical tags, Open Graph and the sitemap. Defaults to `https://filevra.app`. |
+| `VITE_SITE_URL` | Canonical origin used for canonical tags, Open Graph and the sitemap. Defaults to `https://filevra-tools.pages.dev`. |
 | `VITE_CONTACT_EMAIL` | Address shown on `/contact`. When empty, the page hides the address and points to the public issue tracker. |
 | `VITE_ADSENSE_CLIENT` | AdSense publisher ID (`ca-pub-…`). Ads and the consent notice stay disabled while empty. |
 | `VITE_ADSENSE_SLOT_CONTENT` | Ad slot ID for in-content placements. |
@@ -83,12 +83,14 @@ disabled.
 
 ## Deployment
 
-The site is a prerendered static bundle, plus Pages Functions for usage counting. Cloudflare Pages settings:
+The site is a prerendered static bundle, plus Pages Functions for usage counting. It is live at `https://filevra-tools.pages.dev` and deployed by direct upload:
 
-- Build command: `npm run build`
-- Output directory: `dist`
-- Production branch: `main`
-- Node version: 20 or newer (set `NODE_VERSION` if the default differs)
+```bash
+npm run build
+npx wrangler pages deploy dist --project-name filevra-tools
+```
+
+`wrangler.toml` pins the output directory and the `USAGE_DB` D1 binding. Node version: 20 or newer.
 
 See `docs/deployment.md` for the full checklist, environment variables and verification steps. Clean URLs work because each route is prerendered as a flat `route.html` file and Cloudflare Pages maps `/route` to it automatically. `public/404.html` is served for unknown paths and `public/_headers` sets security and cache headers.
 

@@ -1,607 +1,607 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://filevra.app/</loc>
+    <loc>https://filevra-tools.pages.dev/</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://filevra.app/tools</loc>
+    <loc>https://filevra-tools.pages.dev/tools</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://filevra.app/image-compressor</loc>
+    <loc>https://filevra-tools.pages.dev/image-compressor</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/photo-signature-resizer</loc>
+    <loc>https://filevra-tools.pages.dev/photo-signature-resizer</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/image-to-pdf</loc>
+    <loc>https://filevra-tools.pages.dev/image-to-pdf</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/merge-pdf</loc>
+    <loc>https://filevra-tools.pages.dev/merge-pdf</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/compress-pdf</loc>
+    <loc>https://filevra-tools.pages.dev/compress-pdf</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/split-pdf</loc>
+    <loc>https://filevra-tools.pages.dev/split-pdf</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/extract-pdf-pages</loc>
+    <loc>https://filevra-tools.pages.dev/extract-pdf-pages</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/delete-pdf-pages</loc>
+    <loc>https://filevra-tools.pages.dev/delete-pdf-pages</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/rotate-pdf</loc>
+    <loc>https://filevra-tools.pages.dev/rotate-pdf</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/organize-pdf</loc>
+    <loc>https://filevra-tools.pages.dev/organize-pdf</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/pdf-page-numbers</loc>
+    <loc>https://filevra-tools.pages.dev/pdf-page-numbers</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/pdf-watermark</loc>
+    <loc>https://filevra-tools.pages.dev/pdf-watermark</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/pdf-to-jpg</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/pdf-to-png</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/jpg-to-pdf</loc>
+    <loc>https://filevra-tools.pages.dev/pdf-to-jpg</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/png-to-pdf</loc>
+    <loc>https://filevra-tools.pages.dev/pdf-to-png</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/pdf-metadata</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/pdf-to-text</loc>
+    <loc>https://filevra-tools.pages.dev/jpg-to-pdf</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/protect-pdf</loc>
+    <loc>https://filevra-tools.pages.dev/png-to-pdf</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/unlock-pdf</loc>
+    <loc>https://filevra-tools.pages.dev/pdf-metadata</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/crop-pdf</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/pdf-preview</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/grayscale-pdf</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/compare-pdf</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/image-converter</loc>
+    <loc>https://filevra-tools.pages.dev/pdf-to-text</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/jpg-to-png</loc>
+    <loc>https://filevra-tools.pages.dev/protect-pdf</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/unlock-pdf</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/crop-pdf</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/pdf-preview</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/grayscale-pdf</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/compare-pdf</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/image-converter</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/png-to-jpg</loc>
+    <loc>https://filevra-tools.pages.dev/jpg-to-png</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/jpg-to-webp</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/png-to-webp</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/webp-to-jpg</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/webp-to-png</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/svg-to-png</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/svg-to-jpg</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/gif-to-png</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/bmp-to-png</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/ico-to-png</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/avif-to-jpg</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/png-to-ico</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/image-resizer</loc>
+    <loc>https://filevra-tools.pages.dev/png-to-jpg</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/crop-image</loc>
+    <loc>https://filevra-tools.pages.dev/jpg-to-webp</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/rotate-image</loc>
+    <loc>https://filevra-tools.pages.dev/png-to-webp</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/watermark-image</loc>
+    <loc>https://filevra-tools.pages.dev/webp-to-jpg</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/thumbnail-generator</loc>
+    <loc>https://filevra-tools.pages.dev/webp-to-png</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/image-metadata</loc>
+    <loc>https://filevra-tools.pages.dev/svg-to-png</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/remove-image-metadata</loc>
+    <loc>https://filevra-tools.pages.dev/svg-to-jpg</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/gif-to-png</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/bmp-to-png</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/ico-to-png</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/avif-to-jpg</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/png-to-ico</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/image-resizer</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/image-palette</loc>
+    <loc>https://filevra-tools.pages.dev/crop-image</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/replace-image-background</loc>
+    <loc>https://filevra-tools.pages.dev/rotate-image</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/compare-images</loc>
+    <loc>https://filevra-tools.pages.dev/watermark-image</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/image-dimensions</loc>
+    <loc>https://filevra-tools.pages.dev/thumbnail-generator</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/txt-to-pdf</loc>
+    <loc>https://filevra-tools.pages.dev/image-metadata</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/txt-to-docx</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/docx-to-text</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/docx-to-html</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/docx-to-markdown</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/docx-to-pdf</loc>
+    <loc>https://filevra-tools.pages.dev/remove-image-metadata</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/markdown-to-html</loc>
+    <loc>https://filevra-tools.pages.dev/image-palette</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/markdown-to-pdf</loc>
+    <loc>https://filevra-tools.pages.dev/replace-image-background</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/html-to-markdown</loc>
+    <loc>https://filevra-tools.pages.dev/compare-images</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/html-to-pdf</loc>
+    <loc>https://filevra-tools.pages.dev/image-dimensions</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/markdown-editor</loc>
+    <loc>https://filevra-tools.pages.dev/txt-to-pdf</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/csv-to-json</loc>
+    <loc>https://filevra-tools.pages.dev/txt-to-docx</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/docx-to-text</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/docx-to-html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/docx-to-markdown</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/docx-to-pdf</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/json-to-csv</loc>
+    <loc>https://filevra-tools.pages.dev/markdown-to-html</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/csv-to-xlsx</loc>
+    <loc>https://filevra-tools.pages.dev/markdown-to-pdf</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/html-to-markdown</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/html-to-pdf</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/markdown-editor</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/csv-to-json</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/xlsx-to-csv</loc>
+    <loc>https://filevra-tools.pages.dev/json-to-csv</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/xlsx-to-json</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/json-to-xlsx</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/excel-to-pdf</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/spreadsheet-viewer</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/xls-to-xlsx</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/pptx-to-text</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/text-compare</loc>
+    <loc>https://filevra-tools.pages.dev/csv-to-xlsx</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/json-formatter</loc>
+    <loc>https://filevra-tools.pages.dev/xlsx-to-csv</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/xlsx-to-json</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/json-to-xlsx</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/excel-to-pdf</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/spreadsheet-viewer</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/xls-to-xlsx</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/pptx-to-text</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/text-compare</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/json-validator</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/xml-formatter</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/xml-validator</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/base64-encoder</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/base64-decoder</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/url-encoder</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/url-decoder</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/code-formatter</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/code-minifier</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/word-counter</loc>
+    <loc>https://filevra-tools.pages.dev/json-formatter</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/case-converter</loc>
+    <loc>https://filevra-tools.pages.dev/json-validator</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/sha256-hash</loc>
+    <loc>https://filevra-tools.pages.dev/xml-formatter</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/md5-hash</loc>
+    <loc>https://filevra-tools.pages.dev/xml-validator</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/qr-code-generator</loc>
+    <loc>https://filevra-tools.pages.dev/base64-encoder</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/base64-decoder</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/url-encoder</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/url-decoder</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/code-formatter</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/code-minifier</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/word-counter</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/barcode-generator</loc>
+    <loc>https://filevra-tools.pages.dev/case-converter</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/zip-creator</loc>
+    <loc>https://filevra-tools.pages.dev/sha256-hash</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/md5-hash</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/qr-code-generator</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/zip-extractor</loc>
+    <loc>https://filevra-tools.pages.dev/barcode-generator</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/file-renamer</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/file-size-checker</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/file-type-detector</loc>
-    <lastmod>2026-11-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://filevra.app/workflow</loc>
+    <loc>https://filevra-tools.pages.dev/zip-creator</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://filevra.app/image-preparation-guide</loc>
+    <loc>https://filevra-tools.pages.dev/zip-extractor</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/pdf-preparation-guide</loc>
+    <loc>https://filevra-tools.pages.dev/file-renamer</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://filevra.app/about</loc>
+    <loc>https://filevra-tools.pages.dev/file-size-checker</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/file-type-detector</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/workflow</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/image-preparation-guide</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/pdf-preparation-guide</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://filevra-tools.pages.dev/about</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://filevra.app/contact</loc>
+    <loc>https://filevra-tools.pages.dev/contact</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://filevra.app/privacy-policy</loc>
+    <loc>https://filevra-tools.pages.dev/privacy-policy</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://filevra.app/terms</loc>
+    <loc>https://filevra-tools.pages.dev/terms</loc>
     <lastmod>2026-11-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>

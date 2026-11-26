@@ -105,7 +105,7 @@ variable if you would rather keep the address out of the code, and change the de
 2. Create an API key with sending permission and store it as `RESEND_API_KEY`.
 3. Without a verified sending domain, Resend's shared `onboarding@resend.dev` sender can only deliver to the address
    that owns the Resend account. To send to any other address, verify a domain and set `USAGE_MAIL_FROM` to an address
-   on that domain, for example `Filevra Usage <usage@filevra.app>`.
+   on that domain, for example `Filevra Usage <usage@your-domain>`.
 
 If the provider rejects the message, `/api/report` returns HTTP 502 with the provider status and the workflow fails
 visibly instead of pretending the email was sent.
@@ -116,7 +116,7 @@ Repository → **Settings → Secrets and variables → Actions**:
 
 | Kind | Name | Value |
 | --- | --- | --- |
-| Variable | `SITE_URL` | The deployed origin, for example `https://filevra.app` |
+| Variable | `SITE_URL` | The deployed origin, for example `https://filevra-tools.pages.dev` |
 | Secret | `USAGE_REPORT_TOKEN` | The same value as the Pages secret |
 
 `.github/workflows/daily-usage-report.yml` runs at **00:15 IST** (cron `45 18 * * *` UTC) and requests the IST day that

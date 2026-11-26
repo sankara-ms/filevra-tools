@@ -6,7 +6,7 @@ Do this only after the site is actually deployed and the production URL is verif
 
 Two options exist:
 
-- **URL prefix property** — enter the exact origin, for example `https://filevra.app`. Easier to verify for a `pages.dev` host and enough for sitemap submission.
+- **URL prefix property** — enter the exact origin, for example `https://filevra-tools.pages.dev`. Easier to verify for a `pages.dev` host and enough for sitemap submission.
 - **Domain property** — covers every subdomain and protocol. Requires a DNS TXT record, so it only makes sense once a custom domain is delegated to Cloudflare.
 
 Start with a URL prefix property. Add a domain property later if a custom domain is introduced.

@@ -40,4 +40,15 @@ const xml = [
 const output = resolve(__dirname, '../public/sitemap.xml')
 mkdirSync(dirname(output), { recursive: true })
 writeFileSync(output, xml, 'utf8')
-console.log(`sitemap.xml written for ${PAGES.length} pages at ${siteUrl}`)
+
+const robots = [
+  'User-agent: *',
+  'Allow: /',
+  'Disallow: /usage',
+  'Disallow: /api/',
+  '',
+  `Sitemap: ${siteUrl}/sitemap.xml`,
+  '',
+].join('\n')
+writeFileSync(resolve(__dirname, '../public/robots.txt'), robots, 'utf8')
+console.log(`sitemap.xml and robots.txt written for ${PAGES.length} pages at ${siteUrl}`)

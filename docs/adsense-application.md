@@ -24,7 +24,7 @@ This guide describes how the site is prepared for Google AdSense and what must h
 ## Application steps
 
 1. Go to `https://adsense.google.com` and sign in with the Google account that should own the site.
-2. Add the site URL (the exact production origin, for example `https://filevra.app`).
+2. Add the site URL (the exact production origin, for example `https://filevra-tools.pages.dev`).
 3. Choose the payment country and accept the terms. These are legal declarations about the applicant, not settings to guess.
 4. Add the AdSense verification snippet only through the supported mechanism in this codebase:
    - Prefer the **site ownership** verification in AdSense using the same method as Search Console (HTML file or meta tag), rather than a raw script tag.
