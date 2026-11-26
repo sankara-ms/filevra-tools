@@ -8,11 +8,12 @@ export default function FileQueue({ items, onMove, onRemove, reorderable = false
     <ul className="fr-file-list" data-testid="file-queue">
       {items.map((item, index) => (
         <li className="fr-file-item" key={item.key}>
+          {reorderable ? <span className="fr-file-index fr-tabular">{index + 1}</span> : null}
           {item.url ? (
             <img className="fr-file-thumb" src={item.url} alt={`Preview of ${item.name}`} />
           ) : (
             <span className="fr-file-thumb fr-file-thumb--icon">
-              <Icon name="FileText" size={22} />
+              <Icon name="FileText" size={20} />
             </span>
           )}
           <span className="fr-file-meta">
@@ -20,7 +21,7 @@ export default function FileQueue({ items, onMove, onRemove, reorderable = false
               {item.name}
             </span>
             <span className="fr-file-sub">
-              {formatBytes(item.size)}
+              <span className="fr-tabular">{formatBytes(item.size)}</span>
               {item.detail ? ` · ${item.detail}` : ''}
             </span>
           </span>
@@ -34,7 +35,7 @@ export default function FileQueue({ items, onMove, onRemove, reorderable = false
                   disabled={index === 0}
                   onClick={() => onMove(index, -1)}
                 >
-                  <Icon name="ArrowUp" size={16} />
+                  <Icon name="ArrowUp" size={15} />
                 </button>
                 <button
                   type="button"
@@ -43,7 +44,7 @@ export default function FileQueue({ items, onMove, onRemove, reorderable = false
                   disabled={index === items.length - 1}
                   onClick={() => onMove(index, 1)}
                 >
-                  <Icon name="ArrowDown" size={16} />
+                  <Icon name="ArrowDown" size={15} />
                 </button>
               </>
             )}
@@ -53,7 +54,7 @@ export default function FileQueue({ items, onMove, onRemove, reorderable = false
               aria-label={`Remove ${item.name}`}
               onClick={() => onRemove(index)}
             >
-              <Icon name="Trash2" size={16} />
+              <Icon name="Trash2" size={15} />
             </button>
           </span>
         </li>

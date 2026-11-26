@@ -12,6 +12,7 @@ import { compressPdf } from '../../tools/pdfCompressor'
 import { formatBytes, reductionPercent, replaceExtension } from '../../utils/format'
 import { downloadBlob, readError, validatePdfFile } from '../../utils/files'
 import { faqJsonLd, webAppJsonLd } from '../../utils/schema'
+import { trackToolRun } from '../../services/usage'
 
 const TOOL = TOOL_BY_ID['compress-pdf']
 
@@ -131,6 +132,7 @@ export default function PDFCompressor() {
         onProgress: setProgress,
       })
       setResult(output)
+      trackToolRun('compress-pdf')
     } catch (processingError) {
       setError(readError(processingError))
     } finally {
@@ -239,68 +241,78 @@ export default function PDFCompressor() {
               testId="compress-dropzone"
             />
           ) : (
-            <>
-              <FileQueue
-                items={[{ key: `${file.name}-${file.size}`, name: file.name, size: file.size }]}
-                onRemove={reset}
-              />
-              <hr className="fr-divider" />
-              <div className="fr-field" style={{ maxWidth: 420 }}>
-                <label htmlFor="pdf-dpi">Page resolution</label>
-                <select
-                  id="pdf-dpi"
-                  className="fr-input"
-                  value={dpi}
-                  onChange={(event) => setDpi(Number(event.target.value))}
-                  disabled={busy}
-                  data-testid="dpi-select"
-                >
-                  {DPI_OPTIONS.map((option) => (
-                    <option key={option.value} value={option.value}>
-                      {option.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div className="fr-field" style={{ maxWidth: 420 }}>
-                <label htmlFor="pdf-quality">JPEG quality: {quality}%</label>
-                <input
-                  id="pdf-quality"
-                  type="range"
-                  min="40"
-                  max="85"
-                  step="5"
-                  value={quality}
-                  onChange={(event) => setQuality(Number(event.target.value))}
-                  disabled={busy}
-                  className="w-100"
-                  style={{ accentColor: 'var(--fr-primary)' }}
-                  data-testid="quality-range"
+            <div className="fr-workbench">
+              <div className="fr-workbench__main">
+                <FileQueue
+                  items={[{ key: `${file.name}-${file.size}`, name: file.name, size: file.size }]}
+                  onRemove={reset}
                 />
-                <p className="fr-field-hint">Lower quality means a smaller file and softer small text.</p>
+                <p className="fr-small fr-muted mb-0">
+                  Pages are rendered one at a time. Keep this tab open until the result appears.
+                </p>
               </div>
-              <div className="d-flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  className="fr-btn fr-btn-primary"
-                  onClick={runCompression}
-                  disabled={busy}
-                  data-testid="compress-pdf-button"
-                >
-                  <Icon name="Archive" size={17} />
-                  {busy ? 'Compressing…' : 'Compress PDF'}
-                </button>
-                <button type="button" className="fr-btn fr-btn-secondary" onClick={reset} disabled={busy}>
-                  Choose another file
-                </button>
+
+              <div className="fr-workbench__side">
+                <h3 className="fr-workbench__side-head">Settings</h3>
+                <div className="fr-option-grid">
+                  <div className="fr-field">
+                    <label className="fr-field-label" htmlFor="pdf-dpi">
+                      Page resolution
+                    </label>
+                    <select
+                      id="pdf-dpi"
+                      className="fr-input"
+                      value={dpi}
+                      onChange={(event) => setDpi(Number(event.target.value))}
+                      disabled={busy}
+                      data-testid="dpi-select"
+                    >
+                      {DPI_OPTIONS.map((option) => (
+                        <option key={option.value} value={option.value}>
+                          {option.label}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="fr-field">
+                    <label className="fr-field-label" htmlFor="pdf-quality">
+                      JPEG quality: {quality}%
+                    </label>
+                    <input
+                      id="pdf-quality"
+                      type="range"
+                      min="40"
+                      max="85"
+                      step="5"
+                      value={quality}
+                      onChange={(event) => setQuality(Number(event.target.value))}
+                      disabled={busy}
+                      className="fr-range"
+                      data-testid="quality-range"
+                    />
+                    <p className="fr-field-hint">Lower quality means a smaller file and softer small text.</p>
+                  </div>
+                </div>
+
+                <div className="fr-workbench__action">
+                  <button
+                    type="button"
+                    className="fr-btn fr-btn-primary"
+                    onClick={runCompression}
+                    disabled={busy}
+                    data-testid="compress-pdf-button"
+                  >
+                    <Icon name="Archive" size={17} />
+                    {busy ? 'Compressing…' : 'Compress PDF'}
+                  </button>
+                  <button type="button" className="fr-btn fr-btn-secondary" onClick={reset} disabled={busy}>
+                    Choose another file
+                  </button>
+                </div>
+
+                {busy ? <ProgressBar value={progress} label="Compressing PDF" /> : null}
               </div>
-              {busy ? (
-                <>
-                  <ProgressBar value={progress} label="Compressing PDF" />
-                  <p className="fr-small fr-muted mb-0">Rendering pages one at a time. Keep this tab open.</p>
-                </>
-              ) : null}
-            </>
+            </div>
           )}
 
           <ErrorMessage>{error}</ErrorMessage>

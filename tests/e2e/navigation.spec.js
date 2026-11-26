@@ -3,7 +3,11 @@ import { collectErrors } from './helpers/fixtures'
 
 const ROUTES = [
   { path: '/', title: /Free Image and PDF Tools/, heading: 'Prepare Your Images and Documents in Seconds' },
-  { path: '/image-compressor', title: /Image Compressor/, heading: 'Compress an image to a target file size' },
+  { path: '/tools', title: /All Tools/, heading: 'Every Filevra tool in one place' },
+  { path: '/workflow', title: /Workflow Builder/, heading: 'Chain several file steps into one run' },
+  { path: '/jpg-to-pdf', title: /JPG to PDF/, heading: 'JPG to PDF' },
+  { path: '/case-converter', title: /Case Converter/, heading: 'Case Converter' },
+  { path: '/image-compressor', title: /Image Compressor/, heading: 'Compress images to a target file size' },
   { path: '/photo-signature-resizer', title: /Photo and Signature Resizer/, heading: 'Resize a photo or signature to exact pixel dimensions' },
   { path: '/image-to-pdf', title: /Image to PDF/, heading: 'Convert images to a single PDF' },
   { path: '/merge-pdf', title: /Merge PDF Files Online/, heading: 'Merge PDF files into one document' },
@@ -50,11 +54,24 @@ test.describe('navigation and page metadata', () => {
   test('unknown routes render the not-found page', async ({ page }) => {
     const errors = collectErrors(page)
     await page.goto('/')
-    await page.evaluate(() => {
-      window.history.pushState({}, '', '/this-page-does-not-exist')
-      window.dispatchEvent(new PopStateEvent('popstate'))
-    })
-    await expect(page.getByRole('heading', { level: 1 })).toHaveText('We could not find that page')
+    // The router only listens after hydration, so nudge it until it reacts.
+    await expect
+      .poll(
+        async () => {
+          await page.evaluate(() => {
+            if (window.location.pathname !== '/this-page-does-not-exist') {
+              window.history.pushState({}, '', '/this-page-does-not-exist')
+            }
+            window.dispatchEvent(new PopStateEvent('popstate'))
+          })
+          return page
+            .getByRole('heading', { level: 1 })
+            .innerText()
+            .catch(() => '')
+        },
+        { timeout: 15000 },
+      )
+      .toBe('We could not find that page')
     await expect(page.getByRole('link', { name: 'Go to the homepage' })).toBeVisible()
     expect(errors).toEqual([])
 
@@ -72,6 +89,9 @@ test.describe('navigation and page metadata', () => {
 
     const robots = await request.get('/robots.txt')
     expect(robots.status()).toBe(200)
-    expect(await robots.text()).toContain('Sitemap: https://filevra.app/sitemap.xml')
+    const robotsText = await robots.text()
+    expect(robotsText).toContain('Sitemap: https://filevra.app/sitemap.xml')
+    expect(robotsText).toContain('Disallow: /usage')
+    expect(robotsText).toContain('Disallow: /api/')
   })
 })

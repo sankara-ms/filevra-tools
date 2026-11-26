@@ -28,11 +28,7 @@ export default function ResultCard({
           ))}
         </div>
       )}
-      {warning ? (
-        <p className="fr-small mb-3" style={{ color: 'var(--fr-warning)' }}>
-          {warning}
-        </p>
-      ) : null}
+      {warning ? <p className="fr-small fr-runner-warning mb-3">{warning}</p> : null}
       {children}
       <div className="fr-result-actions">
         {onDownload ? (

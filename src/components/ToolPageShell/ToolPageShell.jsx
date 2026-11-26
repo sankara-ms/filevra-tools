@@ -27,57 +27,47 @@ export default function ToolPageShell({
           <Breadcrumbs
             items={[
               { label: 'Home', to: '/' },
-              { label: 'Tools', to: '/#tools' },
+              { label: 'Tools', to: '/tools' },
               { label: tool.name },
             ]}
           />
           <h1>{title}</h1>
           <p>{intro}</p>
+          {facts.length > 0 ? (
+            <ul className="fr-facts-row">
+              {facts.map((fact) => (
+                <li className="fr-fact" key={fact}>
+                  <Icon name="Check" size={14} />
+                  <span>{fact}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
       </div>
 
-      <section className="fr-section" style={{ paddingBottom: '2.5rem' }}>
-        <div className="fr-container fr-tool-layout">
-          <div className="fr-tool-main">{children}</div>
-          <aside className="fr-aside">
-            <div className="fr-aside-card">
-              <h3>Quick facts</h3>
-              <ul>
-                {facts.map((fact) => (
-                  <li key={fact}>
-                    <span className="d-inline-flex align-items-start gap-2 fr-small" style={{ color: 'var(--fr-text)' }}>
-                      <Icon name="Check" size={15} className="mt-1" style={{ color: 'var(--fr-success)' }} />
-                      <span>{fact}</span>
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="fr-aside-card">
-              <h3>Related tools</h3>
-              <ul>
+      <section className="fr-section fr-section--tight">
+        <div className="fr-container">
+          {children}
+
+          <div className="fr-tool-details">
+            <div>
+              <h2 className="fr-details-heading">Related tools</h2>
+              <div className="fr-related-row">
                 {related.map((item) => (
-                  <li key={item.id}>
-                    <Link to={item.path}>
-                      <Icon name={item.icon} size={16} />
-                      {item.name}
-                    </Link>
-                  </li>
+                  <Link to={item.path} className="fr-related-link" key={item.id}>
+                    <Icon name={item.icon} size={15} />
+                    {item.name}
+                  </Link>
                 ))}
-              </ul>
+              </div>
             </div>
-            <div className="fr-aside-card">
-              <h3 className="d-flex align-items-center gap-2">
-                <Icon name="ShieldCheck" size={17} />
-                Private by design
-              </h3>
-              <p className="fr-aside-note">
-                Your file is handled in this browser tab. It is not uploaded to a Filevra server, stored in a
-                database or sent to analytics.{' '}
-                <Link to="/privacy-policy">How this works</Link>.
-              </p>
-            </div>
-          </aside>
+            <p className="fr-tool-details__note">
+              <Icon name="ShieldCheck" size={15} /> Your file is handled in this browser tab. It is not uploaded to a
+              Filevra server, stored in a database or sent to analytics. <Link to="/privacy-policy">How this works</Link>
+              .
+            </p>
+          </div>
         </div>
       </section>
 
@@ -86,11 +76,14 @@ export default function ToolPageShell({
           <div className="fr-container">
             <div className="fr-section-head">
               <h2>How to use the {tool.name.toLowerCase()}</h2>
-              <p>Three steps, no account and no installation.</p>
+              <p>No account and no installation.</p>
             </div>
-            <ol className="fr-steps">
-              {steps.map((step) => (
-                <li className="fr-step" key={step.title}>
+            <ol className="fr-flow">
+              {steps.map((step, index) => (
+                <li className="fr-flow-step" key={step.title}>
+                  <span className="fr-flow-num" aria-hidden="true">
+                    {index + 1}
+                  </span>
                   <h3>{step.title}</h3>
                   <p>{step.text}</p>
                 </li>
@@ -138,8 +131,8 @@ export default function ToolPageShell({
             <h2>Privacy and your files</h2>
             <p>
               The file is read by JavaScript running in this tab and the result is created in the same tab. Nothing is
-              uploaded, and Filevra does not keep a copy. Closing or reloading the page discards the working data.
-              The only thing stored in your browser is your advertising choice, and only when advertising is enabled.
+              uploaded, and Filevra does not keep a copy. Closing or reloading the page discards the working data. The
+              only thing stored in your browser is your advertising choice, and only when advertising is enabled.
             </p>
           </div>
           <AdSlot placement="content" />
@@ -154,9 +147,7 @@ export default function ToolPageShell({
               <p>Short answers to the questions people ask most about this tool.</p>
             </div>
             <Faq items={faqs} />
-            <h2 className="mt-5 mb-3" style={{ fontSize: '1.4rem' }}>
-              Related tools
-            </h2>
+            <h2 className="fr-details-heading mt-5">More tools like this</h2>
             <div className="fr-grid">
               {related.map((item) => (
                 <ToolCard key={item.id} tool={item} />

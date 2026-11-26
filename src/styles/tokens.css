@@ -1,43 +1,115 @@
 :root {
+  /* ---------- Brand ----------
+     The blue is shared with BrandMark, favicon.svg and the PWA manifest, so the
+     value stays fixed while its soft/ring companions carry the new palette. */
   --fr-primary: #1f5fbf;
+  --fr-primary-hover: #1a51a4;
+  --fr-primary-press: #16437f;
   --fr-primary-strong: #174a99;
-  --fr-primary-soft: #eaf2fd;
-  --fr-primary-border: #b9d2f4;
+  --fr-primary-soft: #eef4fd;
+  --fr-primary-soft-2: #e1ecfb;
+  --fr-primary-border: #bdd3f2;
+  --fr-primary-ring: rgba(31, 95, 191, 0.22);
 
-  --fr-ink: #16202e;
-  --fr-text: #2b3746;
-  --fr-muted: #5d6b7d;
-  --fr-subtle: #7d8998;
+  /* ---------- Ink and text ---------- */
+  --fr-ink: #101b2b;
+  --fr-text: #29374b;
+  --fr-muted: #586a80;
+  --fr-subtle: #8492a3;
 
+  /* ---------- Surfaces ---------- */
   --fr-bg: #ffffff;
-  --fr-surface: #f6f8fb;
-  --fr-surface-2: #eef2f7;
-  --fr-border: #dfe5ec;
-  --fr-border-strong: #c6d0dc;
+  --fr-surface: #f7f9fc;
+  --fr-surface-2: #eff3f8;
+  --fr-surface-3: #e6ecf4;
+  --fr-border: #e4e9f0;
+  --fr-border-strong: #ccd6e2;
+  --fr-border-faint: #eef2f7;
 
-  --fr-success: #1c7d54;
-  --fr-success-soft: #eef9f3;
+  /* ---------- Status ---------- */
+  --fr-success: #127a53;
+  --fr-success-soft: #eef8f3;
   --fr-success-border: #bfe3d0;
   --fr-warning: #8a5a00;
   --fr-warning-soft: #fff8e8;
-  --fr-warning-border: #f2ddb0;
-  --fr-error: #b3261e;
+  --fr-warning-border: #f0d9a8;
+  --fr-error: #b42318;
   --fr-error-soft: #fdf3f2;
   --fr-error-border: #f0c8c5;
 
+  /* ---------- Radius ---------- */
+  --fr-radius-xs: 6px;
   --fr-radius-sm: 8px;
-  --fr-radius: 12px;
-  --fr-radius-lg: 18px;
+  --fr-radius: 10px;
+  --fr-radius-md: 12px;
+  --fr-radius-lg: 14px;
+  --fr-radius-xl: 18px;
+  --fr-radius-pill: 999px;
 
-  --fr-shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.05);
-  --fr-shadow: 0 10px 30px rgba(16, 24, 40, 0.07);
-  --fr-shadow-lg: 0 18px 48px rgba(16, 24, 40, 0.12);
+  /* ---------- Elevation (one level per role) ---------- */
+  --fr-shadow-xs: 0 1px 2px rgba(16, 27, 43, 0.05);
+  --fr-shadow-sm: 0 1px 3px rgba(16, 27, 43, 0.07);
+  --fr-shadow: 0 1px 2px rgba(16, 27, 43, 0.04), 0 8px 24px -14px rgba(16, 27, 43, 0.22);
+  --fr-shadow-lg: 0 24px 48px -24px rgba(16, 27, 43, 0.32), 0 2px 6px rgba(16, 27, 43, 0.06);
 
-  --fr-container: 1140px;
-  --fr-header-height: 72px;
+  /* ---------- Spacing (4px base) ---------- */
+  --fr-space-1: 0.25rem;
+  --fr-space-2: 0.5rem;
+  --fr-space-3: 0.75rem;
+  --fr-space-4: 1rem;
+  --fr-space-5: 1.5rem;
+  --fr-space-6: 2rem;
+  --fr-space-7: 2.5rem;
+  --fr-space-8: 3rem;
+  --fr-space-9: 3.5rem;
+  --fr-space-10: 4.5rem;
 
+  /* ---------- Typography ---------- */
   --fr-font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --fr-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+  --fr-text-xs: 0.75rem;
+  --fr-text-sm: 0.8125rem;
+  --fr-text-base: 0.9375rem;
+  --fr-text-md: 1rem;
+  --fr-text-lg: 1.0625rem;
+  --fr-text-xl: 1.25rem;
+  --fr-text-2xl: 1.5rem;
+  --fr-text-3xl: 1.875rem;
+  --fr-text-4xl: 2.5rem;
+  --fr-tracking-tight: -0.019em;
+  --fr-tracking-tighter: -0.028em;
 
+  /* ---------- Layout ---------- */
+  --fr-container: 1200px;
+  --fr-container-narrow: 860px;
+  --fr-header-height: 64px;
+  --fr-rail-width: 328px;
+  --fr-focus-ring: 0 0 0 3px var(--fr-primary-ring);
+
+  /* ---------- Motion ---------- */
   --fr-ease: cubic-bezier(0.2, 0.7, 0.3, 1);
+  --fr-dur: 160ms;
+
+  /* ---------- Layers ---------- */
+  --fr-z-header: 1040;
+  --fr-z-menu: 1050;
+  --fr-z-consent: 1080;
+
+  /* ---------- Bootstrap bridge ----------
+     Bootstrap utilities (row, col, d-flex, gap, mt-…) remain in use, so point
+     their theme variables at ours instead of Bootstrap's default blue. */
+  --bs-body-color: var(--fr-text);
+  --bs-body-bg: var(--fr-bg);
+  --bs-body-font-family: var(--fr-font);
+  --bs-body-font-size: var(--fr-text-base);
+  --bs-border-color: var(--fr-border);
+  --bs-border-radius: var(--fr-radius);
+  --bs-border-radius-sm: var(--fr-radius-sm);
+  --bs-border-radius-lg: var(--fr-radius-lg);
+  --bs-primary: var(--fr-primary);
+  --bs-link-color: var(--fr-primary);
+  --bs-link-color-rgb: 31, 95, 191;
+  --bs-link-hover-color: var(--fr-primary-hover);
+  --bs-emphasis-color: var(--fr-ink);
+  --bs-secondary-color: var(--fr-muted);
 }

@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
     <>
       <SEO
         title="Privacy Policy - How Filevra Handles Your Files"
-        description="Filevra processes images and PDFs in your browser. This policy explains local processing, the service worker cache, hosting logs, advertising consent and your choices."
+        description="Filevra processes images and PDFs in your browser. This policy explains local processing, first-party usage counts, the service worker cache, hosting logs, advertising consent and your choices."
         path="/privacy-policy"
       />
 
@@ -28,8 +28,9 @@ export default function PrivacyPolicy() {
             <h2>The short version</h2>
             <p>
               {SITE_NAME} processes your images and PDFs inside your browser. The files are not uploaded, not stored on
-              a server and not sent to analytics or advertising services. There are no accounts. The only preference
-              saved in your browser is an advertising consent choice, and only when advertising is enabled.
+              a server and not sent to analytics or advertising services. There are no accounts. The site counts page
+              visits and tool runs, but never file names or document contents. The only preference saved in your browser
+              is an advertising consent choice, and only when advertising is enabled.
             </p>
 
             <h2>Files you process</h2>
@@ -64,6 +65,10 @@ export default function PrivacyPolicy() {
               Clearing site data removes the consent choice as well, so the consent notice may appear again on a later
               visit.
             </p>
+            <p>
+              <strong>Usage counting.</strong> Nothing is stored on your device for counting. It sets no cookie and does
+              not write to localStorage or IndexedDB.
+            </p>
 
             <h2>Hosting and technical logs</h2>
             <p>
@@ -97,11 +102,39 @@ export default function PrivacyPolicy() {
               also manage personalised advertising through your Google account settings.
             </p>
 
-            <h2>Analytics</h2>
+            <h2>Usage counting</h2>
             <p>
-              This deployment does not load a third-party analytics product. No heatmaps, session recordings or
-              cross-site tracking pixels are used. If that changes, this policy will be updated before the change takes
-              effect.
+              {SITE_NAME} counts how many people visit and which tools are used, so the site owner can see which tools
+              are worth keeping. Counting is first-party: a small function on this domain receives the page address and,
+              when a tool finishes, the tool’s name. No third-party analytics product, heatmap, session recording or
+              cross-site tracking pixel is loaded.
+            </p>
+            <ul>
+              <li>
+                The request contains a page path such as <span className="fr-mono">/image-compressor</span> or a tool
+                name such as <span className="fr-mono">image-compressor</span>. It never contains a file, a file name,
+                a file size or document contents.
+              </li>
+              <li>
+                To count the same visitor once per day, the server computes a short hash from your IP address, browser
+                user agent and the date, using a secret salt. The raw IP address and user agent are not stored.
+              </li>
+              <li>
+                Visitor hashes are kept for at most 35 days and then deleted. Daily totals — visitors, page views and
+                tool runs — are kept without the hash.
+              </li>
+              <li>
+                Counting uses no cookie and no browser storage, and it works the same way whether or not you allow
+                advertising.
+              </li>
+              <li>
+                A daily summary of these totals is emailed to the site owner. The private report is passcode-protected
+                and excluded from search engines.
+              </li>
+            </ul>
+            <p>
+              You can block the counting request with a content blocker; the tools keep working because counting never
+              blocks or alters a result.
             </p>
 
             <h2>Third-party software</h2>
@@ -113,16 +146,19 @@ export default function PrivacyPolicy() {
 
             <h2>Children</h2>
             <p>
-              The site is a general-purpose utility and is not directed at children. It collects no personal information
-              and requires no account, so there is no child-specific data to manage.
+              The site is a general-purpose utility and is not directed at children. It requires no account and
+              collects no documents, names, email addresses or contact details, so there is no child-specific data to
+              manage.
             </p>
 
             <h2>Your choices and rights</h2>
             <p>
               Because no account or server-side document store exists, there is no personal profile to access, export or
-              delete. You can withdraw advertising consent by clearing site data for this domain, which removes the
+              delete. Usage counting keeps only daily totals plus a short-lived hash that cannot be read back into an IP
+              address. You can withdraw advertising consent by clearing site data for this domain, which removes the
               stored choice. If you are in a region with statutory data protection rights and have a question about
-              technical logs processed by the hosting provider, use the <Link to="/contact">contact page</Link>.
+              usage counts or technical logs processed by the hosting provider, use the{' '}
+              <Link to="/contact">contact page</Link>.
             </p>
 
             <h2>Changes to this policy</h2>

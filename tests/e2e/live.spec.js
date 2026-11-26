@@ -25,6 +25,20 @@ test.describe('live deployment smoke test', () => {
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `${LIVE_URL}/`)
   })
 
+  test('records a first-party page view', async ({ page }) => {
+    test.skip(!LIVE_URL, 'Set LIVE_URL to run the live smoke test.')
+    const endpoint = `${LIVE_URL.replace(/\/$/, '')}/api/track`
+    const tracked = page.waitForRequest(
+      (request) => request.url() === endpoint && request.method() === 'POST',
+      { timeout: 15000 },
+    )
+    await page.goto(`${LIVE_URL}/tools`)
+    const request = await tracked
+    const body = request.postData() || ''
+    expect(body).toContain('"type":"page"')
+    expect(body).toContain('"/tools"')
+  })
+
   test('serves the custom 404 page for unknown paths', async ({ request }) => {
     test.skip(!LIVE_URL, 'Set LIVE_URL to run the live smoke test.')
     const response = await request.get(`${LIVE_URL}/this-page-does-not-exist`, { failOnStatusCode: false })

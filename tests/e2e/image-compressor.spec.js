@@ -48,6 +48,46 @@ test.describe('image compressor', () => {
     await expect(page.getByTestId('result-card')).toBeVisible({ timeout: 40_000 })
   })
 
+  test('compresses a batch and exports every result as a ZIP', async ({ page }) => {
+    await page.goto('/image-compressor')
+
+    await page.setInputFiles('[data-testid="image-dropzone-input"]', fixture('noise.png'))
+    await expect(page.getByTestId('batch-item')).toHaveCount(1)
+
+    await page.setInputFiles('[data-testid="add-more-input"]', fixture('gradient.png'))
+    await expect(page.getByTestId('batch-item')).toHaveCount(2)
+    await expect(page.getByTestId('batch-summary')).toContainText('2 images')
+
+    await page.getByTestId('target-200').click()
+    await page.getByTestId('compress-button').click()
+    await expect(page.getByTestId('batch-progress-text')).toBeVisible()
+
+    const card = page.getByTestId('result-card')
+    await expect(card).toBeVisible({ timeout: 90_000 })
+    await expect(card).toContainText('2 of 2')
+    await expect(page.getByTestId('download-item')).toHaveCount(2)
+
+    const [download] = await Promise.all([
+      page.waitForEvent('download'),
+      page.getByTestId('download-zip').click(),
+    ])
+    expect(download.suggestedFilename()).toBe('filevra-compressed-images.zip')
+    const zipBuffer = fs.readFileSync(await download.path())
+    expect(zipBuffer.subarray(0, 2).toString()).toBe('PK')
+
+    const JSZip = (await import('jszip')).default
+    const zip = await JSZip.loadAsync(zipBuffer)
+    const names = Object.keys(zip.files)
+      .filter((name) => !zip.files[name].dir)
+      .sort()
+    expect(names).toEqual(['compressed-gradient.jpg', 'compressed-noise.jpg'])
+
+    await page.getByTestId('clear-all').click()
+    await expect(page.getByTestId('batch-item')).toHaveCount(0)
+    await expect(page.getByTestId('result-card')).toHaveCount(0)
+    await expect(page.getByTestId('image-dropzone')).toBeVisible()
+  })
+
   test('reset returns the tool to its empty state', async ({ page }) => {
     await page.goto('/image-compressor')
 

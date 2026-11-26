@@ -8,20 +8,21 @@ export default function Footer() {
   return (
     <footer className="fr-footer">
       <div className="fr-container">
-        <div className="row g-4">
-          <div className="col-12 col-lg-4">
-            <div className="fr-footer-brand">
-              <Link to="/" className="fr-brand" style={{ color: '#fff' }}>
-                <BrandMark size={34} />
-                <span>{SITE_NAME}</span>
-              </Link>
-              <p className="mt-3">
-                Free browser-based tools to prepare images and PDF documents. Files are processed on your device and
-                are never uploaded to a Filevra server.
-              </p>
-            </div>
+        <div className="fr-footer-grid">
+          <div className="fr-footer-brand">
+            <Link to="/" className="fr-brand">
+              <span className="fr-brand-mark">
+                <BrandMark size={30} />
+              </span>
+              <span>{SITE_NAME}</span>
+            </Link>
+            <p>
+              Free browser-based tools to prepare images and PDF documents. Files are processed on your device and are
+              never uploaded to a Filevra server.
+            </p>
           </div>
-          <div className="col-6 col-lg-2">
+
+          <div>
             <h2>Tools</h2>
             <ul>
               <li>
@@ -41,7 +42,8 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-6 col-lg-2">
+
+          <div>
             <h2>Guides</h2>
             <ul>
               <li>
@@ -58,7 +60,8 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-12 col-lg-4">
+
+          <div>
             <h2>Legal</h2>
             <ul>
               <li>
@@ -75,6 +78,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
         <div className="fr-footer-bottom">
           <span>
             © {year} {SITE_NAME}. All rights reserved.

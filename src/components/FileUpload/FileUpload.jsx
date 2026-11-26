@@ -11,6 +11,7 @@ export default function FileUpload({
   onFiles,
   disabled = false,
   testId = 'dropzone',
+  compact = false,
 }) {
   const inputRef = useRef(null)
   const [dragging, setDragging] = useState(false)
@@ -29,7 +30,9 @@ export default function FileUpload({
 
   return (
     <div
-      className={`fr-dropzone${dragging ? ' is-dragging' : ''}${disabled ? ' is-disabled' : ''}`}
+      className={`fr-dropzone${compact ? ' fr-dropzone--compact' : ''}${dragging ? ' is-dragging' : ''}${
+        disabled ? ' is-disabled' : ''
+      }`}
       role="button"
       tabIndex={disabled ? -1 : 0}
       aria-label={`${title}. ${hint || ''}`}
@@ -64,12 +67,14 @@ export default function FileUpload({
         handleFiles(event.dataTransfer.files)
       }}
     >
-      <span className="fr-dropzone-icon">
-        <Icon name="Upload" size={24} />
+      <span className="fr-dropzone__icon">
+        <Icon name="Upload" size={compact ? 18 : 21} />
       </span>
-      <strong>{title}</strong>
-      <span>{hint}</span>
-      <span className="fr-btn fr-btn-secondary fr-btn-sm" aria-hidden="true">
+      <span className="fr-dropzone__text">
+        <span className="fr-dropzone__title">{title}</span>
+        <span className="fr-dropzone__hint">{hint}</span>
+      </span>
+      <span className="fr-btn fr-btn-secondary fr-btn-sm fr-dropzone__cta" aria-hidden="true">
         Browse files
       </span>
       <input

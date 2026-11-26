@@ -1,6 +1,6 @@
 # Cloudflare Pages deployment
 
-The site is a static bundle: `npm run build` writes everything to `dist/`. There is no server, database or runtime secret. This document describes the intended deployment and how to verify it. It is written as a checklist; **do not mark a deployment complete until the live checks below actually pass.**
+The site is a prerendered static bundle: `npm run build` writes everything to `dist/`. Pages also deploys the `functions/` directory for first-party usage counting (`/api/track`, `/api/usage`, `/api/report`); those functions need a D1 binding and secrets, described in `docs/usage-analytics.md`. Without them the site and all tools still work and only counting is disabled. This document describes the intended deployment and how to verify it. It is written as a checklist; **do not mark a deployment complete until the live checks below actually pass.**
 
 ## Intended project
 
@@ -69,7 +69,7 @@ If a custom domain is added later:
 Run these in order and record the results. Replace `<host>` with the real deployed origin.
 
 1. **HTTP checks** — every public route returns 200:
-   `/`, `/image-compressor`, `/photo-signature-resizer`, `/image-to-pdf`, `/merge-pdf`, `/compress-pdf`, `/image-preparation-guide`, `/pdf-preparation-guide`, `/about`, `/contact`, `/privacy-policy`, `/terms`.
+   `/`, `/image-compressor`, `/photo-signature-resizer`, `/image-to-pdf`, `/merge-pdf`, `/compress-pdf`, `/image-preparation-guide`, `/pdf-preparation-guide`, `/about`, `/contact`, `/privacy-policy`, `/terms`, `/usage`.
 2. **Error page** — `/this-page-does-not-exist` returns **404** and shows the Filevra not-found page.
 3. **Assets** — `/manifest.json`, `/sw.js`, `/sitemap.xml`, `/robots.txt` return 200; the manifest is served as `application/manifest+json`.
 4. **Metadata** — view source on two pages: unique `<title>`, description, canonical matching the deployed host, and valid JSON-LD.
@@ -82,6 +82,7 @@ Run these in order and record the results. Replace `<host>` with the real deploy
    ```
    On Windows Git Bash use `LIVE_URL=https://<host> npx playwright test --project=live`.
 9. **GitHub Actions** — set the repository variable `LIVE_URL=https://<host>` so the weekly live smoke workflow runs. Actions → Live smoke test → Run workflow to confirm.
+10. **Usage counting** — complete `docs/usage-analytics.md`, then confirm `POST /api/track` returns 204, `/usage` accepts `USAGE_ADMIN_TOKEN`, and `/api/report` returns `{"sent":true}`. Until the D1 binding and secrets exist, these endpoints return 503 by design and the tools are unaffected.
 
 ## Rollback
 

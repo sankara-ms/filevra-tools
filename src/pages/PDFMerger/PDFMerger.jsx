@@ -13,6 +13,7 @@ import { mergePdfs } from '../../tools/pdfMerger'
 import { formatBytes } from '../../utils/format'
 import { downloadBlob, readError, validatePdfFile } from '../../utils/files'
 import { faqJsonLd, webAppJsonLd } from '../../utils/schema'
+import { trackToolRun } from '../../services/usage'
 
 const TOOL = TOOL_BY_ID['merge-pdf']
 const MAX_FILES = 30
@@ -155,6 +156,7 @@ export default function PDFMerger() {
         { onProgress: setProgress },
       )
       setResult(output)
+      trackToolRun('merge-pdf')
     } catch (processingError) {
       setError(readError(processingError))
     } finally {
@@ -252,42 +254,48 @@ export default function PDFMerger() {
               testId="merge-dropzone"
             />
           ) : (
-            <>
-              <FileQueue
-                items={items.map(({ key, file }) => ({ key, name: file.name, size: file.size }))}
-                onMove={move}
-                onRemove={remove}
-                reorderable
-              />
-              {items.length < MAX_FILES ? (
-                <div className="mt-3">
+            <div className="fr-workbench fr-workbench--full">
+              <div className="fr-workbench__main">
+                <FileQueue
+                  items={items.map(({ key, file }) => ({ key, name: file.name, size: file.size }))}
+                  onMove={move}
+                  onRemove={remove}
+                  reorderable
+                />
+                {items.length < MAX_FILES ? (
                   <FileUpload
                     id="pdf-merge-more"
                     title="Add more PDFs"
                     hint={`${MAX_FILES - items.length} place(s) left`}
                     accept="application/pdf,.pdf"
                     multiple
+                    compact
                     onFiles={addFiles}
                     disabled={busy}
                     testId="merge-more-dropzone"
                   />
-                </div>
-              ) : null}
-              <div className="d-flex flex-wrap gap-2 mt-3 align-items-center">
-                <button
-                  type="button"
-                  className="fr-btn fr-btn-primary"
-                  onClick={merge}
-                  disabled={busy || items.length < 2}
-                  data-testid="merge-button"
-                >
-                  <Icon name="Layers" size={17} />
-                  {busy ? 'Merging…' : 'Merge PDFs'}
-                </button>
-                {items.length < 2 ? <span className="fr-small fr-muted">Add at least two files to merge.</span> : null}
+                ) : null}
               </div>
-              {busy ? <ProgressBar value={progress} label="Merging PDFs" /> : null}
-            </>
+
+              <div className="fr-workbench__side">
+                <div className="fr-workbench__action">
+                  <button
+                    type="button"
+                    className="fr-btn fr-btn-primary"
+                    onClick={merge}
+                    disabled={busy || items.length < 2}
+                    data-testid="merge-button"
+                  >
+                    <Icon name="Layers" size={17} />
+                    {busy ? 'Merging…' : 'Merge PDFs'}
+                  </button>
+                  {items.length < 2 ? (
+                    <p className="fr-workbench__hint">Add at least two files to merge.</p>
+                  ) : null}
+                </div>
+                {busy ? <ProgressBar value={progress} label="Merging PDFs" /> : null}
+              </div>
+            </div>
           )}
 
           {notice ? (

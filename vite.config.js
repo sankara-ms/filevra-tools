@@ -22,6 +22,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      'terser-browser': fileURLToPath(new URL('./node_modules/terser/dist/bundle.min.js', import.meta.url)),
     },
   },
   ssgOptions: {

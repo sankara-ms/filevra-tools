@@ -4,6 +4,7 @@ import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import ConsentNotice from '../ConsentNotice/ConsentNotice'
 import useOnlineStatus from '../../hooks/useOnlineStatus'
+import { trackPageView } from '../../services/usage'
 import Icon from '../Icon/Icon'
 
 function ScrollManager() {
@@ -23,6 +24,17 @@ function ScrollManager() {
   return null
 }
 
+function UsageTracker() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    if (pathname === '/usage' || pathname.startsWith('/usage/')) return
+    trackPageView(pathname)
+  }, [pathname])
+
+  return null
+}
+
 export default function Layout() {
   const online = useOnlineStatus()
 
@@ -32,6 +44,7 @@ export default function Layout() {
         Skip to content
       </a>
       <ScrollManager />
+      <UsageTracker />
       {!online && (
         <div className="fr-offline-banner" role="status">
           <div className="fr-container">

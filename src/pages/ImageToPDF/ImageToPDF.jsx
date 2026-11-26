@@ -12,6 +12,7 @@ import { imagesToPdf } from '../../tools/imageToPdf'
 import { formatBytes } from '../../utils/format'
 import { downloadBlob, readError, validateImageFile } from '../../utils/files'
 import { faqJsonLd, webAppJsonLd } from '../../utils/schema'
+import { trackToolRun } from '../../services/usage'
 
 const TOOL = TOOL_BY_ID['image-to-pdf']
 const MAX_IMAGES = 20
@@ -182,6 +183,7 @@ export default function ImageToPDF() {
         { onProgress: setProgress },
       )
       setResult(output)
+      trackToolRun('image-to-pdf')
     } catch (processingError) {
       setError(readError(processingError))
     } finally {
@@ -276,36 +278,45 @@ export default function ImageToPDF() {
               testId="images-dropzone"
             />
           ) : (
-            <>
-              <FileQueue items={items.map(({ key, file, url }) => ({ key, file, name: file.name, size: file.size, url }))} onMove={move} onRemove={remove} reorderable />
-              {items.length < MAX_IMAGES ? (
-                <div className="mt-3">
+            <div className="fr-workbench fr-workbench--full">
+              <div className="fr-workbench__main">
+                <FileQueue
+                  items={items.map(({ key, file, url }) => ({ key, file, name: file.name, size: file.size, url }))}
+                  onMove={move}
+                  onRemove={remove}
+                  reorderable
+                />
+                {items.length < MAX_IMAGES ? (
                   <FileUpload
                     id="pdf-images-more"
                     title="Add more images"
                     hint={`${MAX_IMAGES - items.length} place(s) left`}
                     accept="image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp"
                     multiple
+                    compact
                     onFiles={addFiles}
                     disabled={busy}
                     testId="images-more-dropzone"
                   />
-                </div>
-              ) : null}
-              <div className="d-flex flex-wrap gap-2 mt-3">
-                <button
-                  type="button"
-                  className="fr-btn fr-btn-primary"
-                  onClick={convert}
-                  disabled={busy}
-                  data-testid="convert-button"
-                >
-                  <Icon name="FileImage" size={17} />
-                  {busy ? 'Building PDF…' : 'Convert to PDF'}
-                </button>
+                ) : null}
               </div>
-              {busy ? <ProgressBar value={progress} label="Building PDF" /> : null}
-            </>
+
+              <div className="fr-workbench__side">
+                <div className="fr-workbench__action">
+                  <button
+                    type="button"
+                    className="fr-btn fr-btn-primary"
+                    onClick={convert}
+                    disabled={busy}
+                    data-testid="convert-button"
+                  >
+                    <Icon name="FileImage" size={17} />
+                    {busy ? 'Building PDF…' : 'Convert to PDF'}
+                  </button>
+                </div>
+                {busy ? <ProgressBar value={progress} label="Building PDF" /> : null}
+              </div>
+            </div>
           )}
 
           {notice ? (

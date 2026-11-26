@@ -14,6 +14,7 @@ import { computeTargetSize } from '../../tools/dimensions'
 import { formatBytes, parseKilobytes } from '../../utils/format'
 import { downloadBlob, readError, validateImageFile } from '../../utils/files'
 import { faqJsonLd, webAppJsonLd } from '../../utils/schema'
+import { trackToolRun } from '../../services/usage'
 
 const TOOL = TOOL_BY_ID['photo-signature-resizer']
 
@@ -216,6 +217,7 @@ export default function PhotoSignatureResizer() {
         onProgress: setProgress,
       })
       setResult(resized)
+      trackToolRun('photo-signature-resizer')
     } catch (processingError) {
       setError(readError(processingError))
     } finally {
@@ -316,113 +318,114 @@ export default function PhotoSignatureResizer() {
               testId="resize-dropzone"
             />
           ) : (
-            <>
-              <FileQueue
-                items={[
-                  {
-                    key: `${file.name}-${file.size}`,
-                    name: file.name,
-                    size: file.size,
-                    url: previewUrl,
-                    detail: source ? `${source.width} × ${source.height} px` : undefined,
-                  },
-                ]}
-                onRemove={reset}
-              />
-              <div className="text-center mt-3">
-                <img
-                  src={previewUrl}
-                  alt={`Preview of ${file.name}`}
-                  style={{
-                    maxWidth: '100%',
-                    maxHeight: 200,
-                    borderRadius: 10,
-                    border: '1px solid var(--fr-border)',
-                    background: '#fff',
-                  }}
+            <div className="fr-workbench">
+              <div className="fr-workbench__main">
+                <FileQueue
+                  items={[
+                    {
+                      key: `${file.name}-${file.size}`,
+                      name: file.name,
+                      size: file.size,
+                      url: previewUrl,
+                      detail: source ? `${source.width} × ${source.height} px` : undefined,
+                    },
+                  ]}
+                  onRemove={reset}
                 />
+                {previewUrl ? (
+                  <figure className="fr-image-preview">
+                    <img src={previewUrl} alt={`Preview of ${file.name}`} />
+                  </figure>
+                ) : null}
               </div>
-              <hr className="fr-divider" />
 
-              <div className="fr-input-row">
-                <div className="fr-field">
-                  <label htmlFor="resize-width">Width (pixels)</label>
-                  <input
-                    id="resize-width"
-                    className="fr-input"
-                    type="number"
-                    inputMode="numeric"
-                    min="1"
-                    max="12000"
-                    value={width}
-                    onChange={(event) => updateWidth(event.target.value)}
-                    data-testid="width-input"
-                  />
+              <div className="fr-workbench__side">
+                <h3 className="fr-workbench__side-head">Target size</h3>
+                <div className="fr-option-grid">
+                  <div className="fr-field">
+                    <label className="fr-field-label" htmlFor="resize-width">
+                      Width (pixels)
+                    </label>
+                    <input
+                      id="resize-width"
+                      className="fr-input"
+                      type="number"
+                      inputMode="numeric"
+                      min="1"
+                      max="12000"
+                      value={width}
+                      onChange={(event) => updateWidth(event.target.value)}
+                      data-testid="width-input"
+                    />
+                  </div>
+                  <div className="fr-field">
+                    <label className="fr-field-label" htmlFor="resize-height">
+                      Height (pixels)
+                    </label>
+                    <input
+                      id="resize-height"
+                      className="fr-input"
+                      type="number"
+                      inputMode="numeric"
+                      min="1"
+                      max="12000"
+                      value={height}
+                      onChange={(event) => updateHeight(event.target.value)}
+                      data-testid="height-input"
+                    />
+                  </div>
+                  <label className="fr-toggle-row" htmlFor="resize-lock">
+                    <input
+                      id="resize-lock"
+                      type="checkbox"
+                      checked={lockAspect}
+                      onChange={(event) => toggleLock(event.target.checked)}
+                      data-testid="lock-aspect"
+                    />
+                    <span>Keep the original aspect ratio</span>
+                  </label>
+                  <div className="fr-field">
+                    <label className="fr-field-label" htmlFor="max-kb">
+                      Maximum file size (optional)
+                    </label>
+                    <div className="d-flex align-items-center gap-2">
+                      <input
+                        id="max-kb"
+                        className="fr-input"
+                        inputMode="decimal"
+                        value={maxKb}
+                        onChange={(event) => setMaxKb(event.target.value)}
+                        placeholder="e.g. 20"
+                        data-testid="max-kb"
+                      />
+                      <span className="fr-suffix">KB</span>
+                    </div>
+                    <p className="fr-field-hint">Leave empty if the form only checks pixels.</p>
+                  </div>
                 </div>
-                <div className="fr-field">
-                  <label htmlFor="resize-height">Height (pixels)</label>
-                  <input
-                    id="resize-height"
-                    className="fr-input"
-                    type="number"
-                    inputMode="numeric"
-                    min="1"
-                    max="12000"
-                    value={height}
-                    onChange={(event) => updateHeight(event.target.value)}
-                    data-testid="height-input"
-                  />
+
+                <div className="fr-workbench__action">
+                  <button
+                    type="button"
+                    className="fr-btn fr-btn-primary"
+                    onClick={runResize}
+                    disabled={busy || !source}
+                    data-testid="resize-button"
+                  >
+                    <Icon name="Scaling" size={16} />
+                    {busy ? 'Resizing…' : 'Resize image'}
+                  </button>
+                  <button type="button" className="fr-btn fr-btn-secondary" onClick={reset} disabled={busy}>
+                    Choose another file
+                  </button>
                 </div>
+
+                {busy ? <ProgressBar value={progress} label="Resizing image" /> : null}
+                <p className="fr-workbench__hint">
+                  Output is JPEG. Transparent pixels are placed on a white background.
+                </p>
               </div>
-
-              <label className="fr-toggle-row mb-3">
-                <input
-                  type="checkbox"
-                  checked={lockAspect}
-                  onChange={(event) => toggleLock(event.target.checked)}
-                  data-testid="lock-aspect"
-                />
-                Keep the original aspect ratio
-              </label>
-
-              <div className="fr-field" style={{ maxWidth: 280 }}>
-                <label htmlFor="max-kb">Maximum file size (optional)</label>
-                <div className="d-flex align-items-center gap-2">
-                  <input
-                    id="max-kb"
-                    className="fr-input"
-                    inputMode="decimal"
-                    value={maxKb}
-                    onChange={(event) => setMaxKb(event.target.value)}
-                    placeholder="e.g. 20"
-                    data-testid="max-kb"
-                  />
-                  <span className="fr-small fr-muted">KB</span>
-                </div>
-                <p className="fr-field-hint">Leave empty if the form only checks pixels.</p>
-              </div>
-
-              <div className="d-flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  className="fr-btn fr-btn-primary"
-                  onClick={runResize}
-                  disabled={busy || !source}
-                  data-testid="resize-button"
-                >
-                  <Icon name="Scaling" size={17} />
-                  {busy ? 'Resizing…' : 'Resize image'}
-                </button>
-                <button type="button" className="fr-btn fr-btn-secondary" onClick={reset} disabled={busy}>
-                  Choose another file
-                </button>
-              </div>
-
-              {busy ? <ProgressBar value={progress} label="Resizing image" /> : null}
-              <p className="fr-small fr-muted mt-3 mb-0">
-                Output is JPEG. Transparent pixels are placed on a white background.
-              </p>
-            </>
+            </div>
           )}
 
           <ErrorMessage>{error}</ErrorMessage>

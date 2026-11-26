@@ -4,12 +4,17 @@ node_modules/
 # Build output
 dist/
 dist-ssr/
+.vite-react-ssg-temp/
 *.local
 
 # Environment and secrets
 .env
 .env.*
 !.env.example
+.dev.vars
+.dev.vars.*
+.wrangler/
+.kombai/
 
 # Test artifacts
 test-results/

@@ -1,0 +1,39 @@
+name: Daily usage report
+
+on:
+  schedule:
+    # 00:15 Asia/Kolkata (IST). Reports the IST day that just ended.
+    - cron: '45 18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    name: Email the completed day's counts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Request the usage report
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          USAGE_REPORT_TOKEN: ${{ secrets.USAGE_REPORT_TOKEN }}
+          TZ: Asia/Kolkata
+        run: |
+          if [ -z "$SITE_URL" ]; then
+            echo "Set the repository variable SITE_URL to the deployed origin, for example https://filevra.app" >&2
+            exit 1
+          fi
+          if [ -z "$USAGE_REPORT_TOKEN" ]; then
+            echo "Set the repository secret USAGE_REPORT_TOKEN to the same value as the Pages secret." >&2
+            exit 1
+          fi
+
+          # Passing the day explicitly keeps a delayed run from reporting a partial new day.
+          DAY="$(date -d 'yesterday' +%F)"
+          echo "Requesting the report for $DAY"
+
+          curl --fail-with-body --silent --show-error \
+            --retry 3 --retry-delay 30 \
+            -H "Authorization: Bearer $USAGE_REPORT_TOKEN" \
+            "$SITE_URL/api/report?day=$DAY"
